@@ -1,0 +1,268 @@
+// =========================
+// PRODUCTION UPGRADE (UI + UX + DATA + FEATURES)
+// =========================
+
+// File: vite.config.js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+plugins: [react()],
+base: '/portfolio/', // <-- SET THIS TO YOUR REPO NAME }) //=========================// File: src/data/projects.js //
+  Added richer schema (research storytelling + filtering) //=========================export const projects=[ {
+  title: "EEG-to-Image Reconstruction" , tags: ["EEG", "Deep Learning" , "BCI" ],
+  summary: "Cross-modal decoding via EEG→CLIP latent alignment." , metrics: "+X% reconstruction fidelity (placeholder)"
+  , details: { why: "Bridges neural signals with semantic visual representations." ,
+  problem: "EEG is noisy, low SNR, non-stationary." ,
+  approach: "Contrastive alignment between EEG embeddings and CLIP space." ,
+  results: "Recovered coarse semantic structure from EEG." , failure: "Degrades under cross-subject variability." ,
+  stack: ["PyTorch", "NumPy" ] }, link: "https://github.com/UgoBruzadin" } ] //=========================// File:
+  src/components/ThemeToggle.jsx // Dark mode toggle //=========================import { useEffect, useState }
+  from 'react' export default function ThemeToggle() { const [dark, setDark]=useState(false) useEffect(()=> {
+  document.documentElement.classList.toggle('dark', dark)
+  }, [dark])
+
+  return (
+  <button onClick={()=> setDark(!dark)}
+    className="fixed top-4 right-4 px-3 py-1 border rounded"
+    >
+    {dark ? 'Light' : 'Dark'}
+  </button>
+  )
+  }
+
+  // =========================
+  // File: src/components/Filters.jsx
+  // Project filtering
+  // =========================
+  export default function Filters({ tags, active, setActive }) {
+  return (
+  <div className="flex gap-3 justify-center mb-6 flex-wrap">
+    {["All", ...tags].map(tag => (
+    <button key={tag} onClick={()=> setActive(tag)}
+      className={`px-3 py-1 border rounded ${active === tag ? 'bg-black text-white dark:bg-white dark:text-black' :
+      ''}`}
+      >
+      {tag}
+    </button>
+    ))}
+  </div>
+  )
+  }
+
+  // =========================
+  // File: src/components/ProjectModal.jsx
+  // Research-grade structure
+  // =========================
+  import { motion } from 'framer-motion'
+
+  export default function ProjectModal({ project, onClose }) {
+  if (!project) return null
+
+  return (
+  <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
+      className="bg-white dark:bg-gray-900 p-8 rounded-2xl max-w-2xl">
+      <h2 className="text-2xl font-bold">{project.title}</h2>
+
+      <p className="mt-4"><b>Why it matters:</b> {project.details.why}</p>
+      <p><b>Problem:</b> {project.details.problem}</p>
+      <p><b>Approach:</b> {project.details.approach}</p>
+      <p><b>Results:</b> {project.details.results}</p>
+      <p><b>Failure modes:</b> {project.details.failure}</p>
+
+      <div className="mt-4 text-sm">
+        <b>Tech:</b> {project.details.stack.join(', ')}
+      </div>
+
+      <a href={project.link} className="text-blue-500 mt-4 inline-block">
+        Read more →
+      </a>
+
+      <button onClick={onClose} className="block mt-6">Close</button>
+    </motion.div>
+  </div>
+  )
+  }
+
+  // =========================
+  // File: src/components/Carousel.jsx
+  // Snap scrolling + filtering
+  // =========================
+  import { useState } from 'react'
+  import { projects } from '../data/projects'
+  import ProjectCard from './ProjectCard'
+  import ProjectModal from './ProjectModal'
+  import Filters from './Filters'
+
+  export default function Carousel() {
+  const [selected, setSelected] = useState(null)
+  const [active, setActive] = useState("All")
+
+  const allTags = [...new Set(projects.flatMap(p => p.tags))]
+
+  const filtered = active === "All"
+  ? projects
+  : projects.filter(p => p.tags.includes(active))
+
+  return (
+  <section className="py-20">
+    <h2 className="text-3xl text-center mb-4">Projects</h2>
+
+    <Filters tags={allTags} active={active} setActive={setActive} />
+
+    <div className="flex gap-6 overflow-x-auto snap-x px-6">
+      {filtered.map((p, i) => (
+      <div key={i} className="snap-center">
+        <ProjectCard project={p} onClick={()=> setSelected(p)} />
+      </div>
+      ))}
+    </div>
+
+    <ProjectModal project={selected} onClose={()=> setSelected(null)} />
+  </section>
+  )
+  }
+
+  // =========================
+  // File: src/components/Hero.jsx
+  // Improved hierarchy
+  // =========================
+  export default function Hero() {
+  return (
+  <section className="text-center py-24">
+    <img src="/profile.jpg" className="w-36 h-36 mx-auto rounded-full mb-6" />
+
+    <h1 className="text-5xl font-bold">Ugo Bruzadin Nunes</h1>
+
+    <p className="mt-4 max-w-xl mx-auto text-lg">
+      Neural Data Scientist specializing in EEG decoding, multimodal pipelines, and brain–computer interfaces.
+    </p>
+
+    <div className="mt-6 flex justify-center gap-6">
+      <a href="https://github.com/UgoBruzadin">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </section>
+  )
+  }
+
+  // =========================
+  // File: src/App.jsx
+  // Added theme + layout polish
+  // =========================
+  import Hero from './components/Hero'
+  import Carousel from './components/Carousel'
+  import ThemeToggle from './components/ThemeToggle'
+
+  export default function App() {
+  return (
+  <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen">
+    <ThemeToggle />
+    <Hero />
+    <Carousel />
+  </div>
+  )
+  }
+
+  // =========================
+  // NEXT STEPS (CRITICAL)
+  // =========================
+  // 1. Add real project entries (4–6 strong ones)
+  // 2. Replace placeholder metrics with quantitative results
+  // 3. Add profile.jpg to /public
+  // 4. npm run build && npx gh-pages -d dist
+  // 5. Enable GitHub Pages (gh-pages branch)
+
+  // =========================
+  // GITHUB AUTO-SYNC IMPLEMENTATION
+  // =========================
+
+  // File: src/api/github.js
+  // Fetch repositories from GitHub API
+  export async function fetchRepos() {
+  const res = await fetch('https://api.github.com/users/UgoBruzadin/repos')
+  const data = await res.json()
+
+  return data
+  .filter(repo => !repo.fork)
+  .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+  }
+
+  // =========================
+  // File: src/hooks/useGithubProjects.js
+  // Merge GitHub repos with curated metadata
+  // =========================
+  import { useEffect, useState } from 'react'
+  import { fetchRepos } from '../api/github'
+  import { projects as curated } from '../data/projects'
+
+  export function useGithubProjects() {
+  const [projects, setProjects] = useState([])
+
+  useEffect(() => {
+  async function load() {
+  const repos = await fetchRepos()
+
+  const merged = repos.map(repo => {
+  const match = curated.find(p => repo.name.toLowerCase().includes(p.title.toLowerCase()))
+
+  return match
+  ? { ...repo, ...match }
+  : {
+  title: repo.name,
+  summary: repo.description || 'No description provided.',
+  tags: [],
+  link: repo.html_url,
+  auto: true
+  }
+  })
+
+  setProjects(merged)
+  }
+
+  load()
+  }, [])
+
+  return projects
+  }
+
+  // =========================
+  // File: src/components/Carousel.jsx
+  // REPLACE data source with GitHub hook
+  // =========================
+
+  // CHANGE IMPORT:
+  // import { projects } from '../data/projects'
+  import { useGithubProjects } from '../hooks/useGithubProjects'
+
+  // ADD INSIDE COMPONENT:
+  const projects = useGithubProjects()
+
+  // =========================
+  // File: src/components/ProjectCard.jsx
+  // Add indicator for auto-imported repos
+  // =========================
+
+  // ADD inside card JSX (after title):
+  {project.auto && (
+  <span className="text-xs text-gray-400">auto</span>
+  )}
+
+  // =========================
+  // IMPORTANT NOTES
+  // =========================
+  // 1. Curated projects OVERRIDE GitHub repos when matched
+  // 2. Matching is currently fuzzy (title vs repo name) → can be improved
+  // 3. Only non-fork repos are shown
+  // 4. Sorted by most recently updated
+
+  // =========================
+  // OPTIONAL IMPROVEMENTS (ask me)
+  // =========================
+  // - Add repo language → auto-tagging
+  // - Add stars / popularity sorting
+  // - Better matching via explicit repo name key
+  // - Cache API results to avoid rate limits
+  // - Add loading skeletons
+  // - Add pinned projects section

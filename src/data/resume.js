@@ -1,0 +1,211 @@
+export const profile = {
+  name: 'Ugo Bruzadin Nunes, PhD',
+  title: 'Neural Data Scientist',
+  subtitle: 'Brain–Computer Interface Researcher',
+  location: 'San Francisco, CA',
+  email: 'ugobruzadin@gmail.com',
+  github: 'https://github.com/UgoBruzadin',
+  linkedin: 'https://linkedin.com/in/ugonunes',
+  summary:
+    'Neural Data Scientist and BCI researcher with 8+ years of experience conducting human neuroscience research and developing machine learning models for neural signal decoding. Experienced in running structured EEG research sessions, building multimodal data pipelines, and translating neural and behavioral data into actionable insights for applied systems. Motivated by building brain–computer interface technologies that directly improve user autonomy and experience.',
+}
+
+export const experience = [
+  {
+    title: 'Neural Data Scientist',
+    company: 'Alljoined',
+    location: 'San Francisco, CA',
+    period: 'April 2025 – Present',
+    bullets: [
+      'Designed and maintained end-to-end ML pipelines for large-scale multimodal datasets (EEG, behavioral, physiological signals), from raw ingestion to validated model outputs.',
+      'Developed preprocessing workflows for artifact rejection, normalization, and feature standardization, improving model accuracy by up to 12%.',
+      'Engineered time-series features and learned representations to improve cross-subject generalization under non-stationary conditions.',
+      'Implemented supervised and self-supervised models for decoding and prediction tasks using PyTorch and scikit-learn.',
+      'Scaled experiments across GPU clusters using SLURM, optimizing batching strategies and memory usage for high-throughput training.',
+      'Implemented LLM-driven semantic labeling workflows to scale the creation of structured visual stimulus datasets for cross-modal EEG decoding research.',
+      'Designed and trained cross-modal neural networks to align EEG representations with visual latent spaces, enabling image reconstruction from neural signals.',
+    ],
+  },
+  {
+    title: 'Machine Learning Neuroscience Consultant',
+    company: 'Alljoined',
+    location: 'San Francisco, CA',
+    period: 'February 2025 – March 2025',
+    bullets: [
+      'Designed machine learning model for EEG-based visual image reconstruction using EEG-to-CLIP feature alignment.',
+      'Led mental imagery reconstruction experimental design and synchronization using PsychoPy, C++, and LSL.',
+      'Implemented feature quality assessments and signal-to-noise metrics to improve downstream model performance.',
+    ],
+  },
+  {
+    title: 'Postdoctoral Fellow',
+    company: 'Chapman University',
+    location: 'Orange, CA',
+    period: 'September 2023 – May 2025',
+    bullets: [
+      'Developed computational models decoding conscious perception using time-series EEG and machine learning to identify novel neural signatures predictive of conscious awareness.',
+      'Designed a 3D CNN (Keras, TensorFlow, Scikit-Learn) for classifying conscious states, outperforming linear models by 12.5%.',
+      'Created a temporal generalization framework for parallelized moving-window cross-validation, accelerating analysis by 134%.',
+      'Managed multi-lab EEG projects (>5 TB data, 200+ participants) with reproducible workflows (Unix, SQL, Git).',
+      'Directed personnel training, experiment coordination, and cross-institutional data integration.',
+    ],
+  },
+  {
+    title: 'Graduate Researcher',
+    company: 'Southern Illinois University',
+    location: 'Carbondale, IL',
+    period: 'August 2014 – July 2023',
+    bullets: [
+      'Conducted EEG studies with human participants to decode behavioral and demographic variables from neural signals.',
+      'Performed research on mental imagery, working memory, and pharmacological effects on neural signals.',
+      'Developed QuickLab, an open-source MATLAB tool for EEG preprocessing and visualization, improving processing speed by ~500%.',
+      'Designed browser-based cognitive experiments integrating HTML, JavaScript, and SQL for structured data collection.',
+    ],
+  },
+]
+
+export const education = [
+  {
+    degree: 'Ph.D. Cognitive Neuroscience',
+    school: 'Southern Illinois University',
+    location: 'Carbondale, IL',
+    year: '2023',
+  },
+  {
+    degree: 'M.A. Cognitive Neuroscience',
+    school: 'Southern Illinois University',
+    location: 'Carbondale, IL',
+    year: '2018',
+  },
+  {
+    degree: 'B.A. Psychology',
+    school: 'Pontíficia Universidade Católica de São Paulo',
+    location: 'Brazil',
+    year: '2012',
+  },
+]
+
+export const awards = [
+  {
+    title: "President's Student/Faculty Collaborative Research Grant",
+    org: 'Webster University',
+    year: '2022–2023',
+  },
+  {
+    title: 'Menendez Award for Excellence in Research in Visual Science',
+    org: 'Southern Illinois University – Carbondale',
+    year: '2017, 2019',
+  },
+]
+
+export const skills = {
+  'Programming & Tools': [
+    'Python', 'PyTorch', 'TensorFlow', 'Scikit-Learn',
+    'NumPy', 'Pandas', 'MATLAB', 'SQL', 'C/C++', 'R', 'JavaScript',
+  ],
+  'Neural Data & BCI': [
+    'EEG/MEG Decoding', 'Lab Streaming Layer (LSL)', 'Feature Extraction',
+    'Artifact Rejection', 'Neural Signal Processing',
+    'Time–Frequency Analysis', 'Adaptive Decoding Models',
+  ],
+  'Machine Learning': [
+    'CNN', 'Transformer', 'RNN', 'Tree-Based Models',
+    'Time-Series Forecasting', 'Self-Supervised Learning', 'SHAP / Interpretability',
+  ],
+  'Infrastructure': [
+    'Docker', 'AWS', 'SLURM', 'Git', 'Experiment Versioning',
+  ],
+  'Data Visualization': [
+    'Matplotlib', 'Seaborn',
+  ],
+}
+
+export const publications = [
+  {
+    title: 'ENIGMA: A Unified Lightweight EEG-to-Image Model for Multi-Subject Visual Decoding',
+    venue: 'CVPR Conference Submission',
+    year: '2026',
+    link: 'https://github.com/UgoBruzadin/ENIGMA',
+  },
+  {
+    title: 'Alljoined-1.6M: A Million-Trial EEG-Image Dataset for Evaluating Affordable BCIs',
+    venue: 'OpenArxiv',
+    year: '2025',
+    link: 'https://github.com/UgoBruzadin/Alljoined-1.6M',
+  },
+  {
+    title: 'Two, Not One: Electrophysiological Correlates of Consciousness in a No-Report Paradigm',
+    venue: 'ASSC 2025 Poster — Crete',
+    year: '2025',
+    link: null,
+  },
+  {
+    title: 'Visual Awareness Positivity: A Novel Neural Correlate of Consciousness',
+    venue: 'Vision Sciences Society (VSS) 2025 Talk',
+    year: '2025',
+    link: null,
+  },
+]
+
+export const featuredProjects = [
+  {
+    name: 'ENIGMA',
+    repo: 'ENIGMA',
+    summary: 'Unified lightweight EEG-to-image model for multi-subject visual decoding. Submitted to CVPR 2026.',
+    tags: ['EEG', 'Deep Learning', 'BCI', 'CVPR'],
+    why: 'Enables visual decoding from brain signals across multiple subjects with a single lightweight model.',
+    problem: 'Existing models overfit to single subjects and require massive compute.',
+    approach: 'Cross-modal alignment between EEG embeddings and visual latent spaces (CLIP).',
+    results: 'Outperforms prior per-subject models; generalized across subjects in held-out evaluations.',
+    stack: ['PyTorch', 'CLIP', 'Python'],
+    link: 'https://github.com/UgoBruzadin/ENIGMA',
+  },
+  {
+    name: 'Alljoined-1.6M',
+    repo: 'Alljoined-1.6M',
+    summary: 'Large-scale EEG-image dataset with 1.6 million visual stimulus trials for affordable BCI research.',
+    tags: ['EEG', 'Dataset', 'BCI', 'Open Science'],
+    why: 'Large-scale benchmark data is critical for training generalizable BCI models.',
+    problem: 'Existing EEG datasets are too small for robust cross-subject generalization.',
+    approach: 'Systematic data collection across many participants with standardized preprocessing.',
+    results: 'Published on OpenArxiv 2025; enabling new SOTA benchmarks in EEG decoding.',
+    stack: ['Python', 'MATLAB', 'LSL'],
+    link: 'https://github.com/UgoBruzadin/Alljoined-1.6M',
+  },
+  {
+    name: 'Triangulation Project',
+    repo: 'Triangulation_Project',
+    summary: 'Machine learning framework for decoding neural correlates of consciousness from EEG/ERP data.',
+    tags: ['EEG', 'ML', 'Consciousness', 'Python'],
+    why: 'Identifying neural signatures of conscious awareness requires robust cross-task decoding.',
+    problem: 'ERP-based decoding rarely generalizes across tasks and time windows.',
+    approach: 'Temporal generalization with parallelized moving-window cross-validation.',
+    results: '134% speedup in analysis; novel signatures identified (VAP, inattentional blindness correlates).',
+    stack: ['Python', 'Scikit-Learn', 'TensorFlow', 'SQL'],
+    link: 'https://github.com/UgoBruzadin/Triangulation_Project',
+  },
+  {
+    name: 'QuickLab',
+    repo: 'QuickLab',
+    summary: 'Open-source EEGLAB plugin for high-speed EEG preprocessing and visualization.',
+    tags: ['MATLAB', 'EEG', 'Open Source', 'Tool'],
+    why: 'EEG preprocessing pipelines are slow and hard to audit — QuickLab makes them fast and transparent.',
+    problem: 'Standard EEGLAB workflows are slow for large multi-session datasets.',
+    approach: 'Parallelized MATLAB processing with a streamlined GUI.',
+    results: '~500% improvement in processing speed; hosted in the official EEGLAB repository.',
+    stack: ['MATLAB', 'EEGLAB'],
+    link: 'https://github.com/UgoBruzadin/QuickLab',
+  },
+  {
+    name: 'CNN_benchmark_EEG_Blindness',
+    repo: 'CNN_benchmark_EEG_Blindness',
+    summary: '3D CNN for classifying inattentional blindness from EEG signals; outperforms linear baselines.',
+    tags: ['Deep Learning', 'EEG', 'CNN', 'Consciousness'],
+    why: 'Inattentional blindness is a clinically relevant conscious state that lacks reliable neural biomarkers.',
+    problem: 'Linear classifiers fail to capture spatiotemporal EEG dynamics relevant to blindness detection.',
+    approach: '3D CNN treating EEG as (channels × time × frequency) volumes.',
+    results: 'Outperformed linear models by 12.5% in classification accuracy.',
+    stack: ['Python', 'Keras', 'TensorFlow', 'Scikit-Learn'],
+    link: 'https://github.com/UgoBruzadin/CNN_benchmark_EEG_Blindness',
+  },
+]
