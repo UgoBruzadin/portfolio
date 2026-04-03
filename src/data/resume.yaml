@@ -96,7 +96,7 @@ featuredProjects:
 
   - name: ENIGMA
     repo: ENIGMA
-    image: ENIGMA.jpg                 # drop enigma.png in public/projects/
+    image: enigma.jpg                 # filename inside public/projects/
     summary: Unified lightweight EEG-to-image model for multi-subject visual decoding. Submitted to CVPR 2026.
     tags: [EEG, Deep Learning, BCI, CVPR]
     why: Enables visual decoding from brain signals across multiple subjects with a single lightweight model.

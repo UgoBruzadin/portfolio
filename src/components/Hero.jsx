@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { profile } from '../data/resume'
 
+const BASE = import.meta.env.BASE_URL
+
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
@@ -37,6 +39,14 @@ export default function Hero() {
           Ugo Bruzadin Nunes
           <span className="text-neural-400">.</span>
         </motion.h1>
+
+        <motion.div {...fadeUp(0.15)} className="flex justify-center">
+          <img
+            src={`${BASE}profile.jpg`}
+            alt="Ugo Bruzadin Nunes"
+            className="w-24 h-24 rounded-full object-cover border border-slate-200 dark:border-slate-700"
+          />
+        </motion.div>
 
         <motion.p
           {...fadeUp(0.2)}
