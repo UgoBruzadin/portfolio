@@ -11,7 +11,7 @@ const fadeUp = (delay = 0) => ({
 
 export default function Hero() {
   return (
-    <section id="top" className="pt-8 pb-4">
+    <section id="top" className="relative pt-8 pb-4">
       {/* EEG-style decorative signal line */}
       <div className="mb-10 overflow-hidden h-8 opacity-30 dark:opacity-20">
         <svg viewBox="0 0 800 32" className="w-full eeg-pulse" preserveAspectRatio="none">
@@ -40,7 +40,7 @@ export default function Hero() {
           <span className="text-neural-400">.</span>
         </motion.h1>
 
-        <motion.div {...fadeUp(0.15)} className="flex justify-center">
+        <motion.div {...fadeUp(0.15)} className="flex justify-end">
           <img
             src={`${BASE}profile.jpg`}
             alt="Ugo Bruzadin Nunes"

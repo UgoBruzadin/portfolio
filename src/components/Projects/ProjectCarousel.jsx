@@ -53,7 +53,7 @@ function CarouselCard({ project, onClick, active }) {
       `}
     >
       {/* Figure */}
-      <div className="h-44 overflow-hidden bg-slate-100 dark:bg-slate-800">
+      <div className="h-32 overflow-hidden bg-slate-100 dark:bg-slate-800">
         <ProjectFigure project={project} />
       </div>
 

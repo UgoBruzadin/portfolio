@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
 
+const BASE = import.meta.env.BASE_URL
+
 const rows = [
   { label: 'Why it matters', key: 'why' },
   { label: 'Problem', key: 'problem' },
@@ -48,6 +50,16 @@ export default function ProjectModal({ project, onClose }) {
                 </svg>
               </button>
             </div>
+
+            {project.image && (
+              <div className="mb-6 flex justify-center">
+                <img
+                  src={`${BASE}projects/${project.image}`}
+                  alt={project.name}
+                  className="max-h-60 w-full max-w-xl rounded-xl object-contain border border-slate-200 dark:border-slate-700"
+                />
+              </div>
+            )}
 
             {project.tags && (
               <div className="flex flex-wrap gap-2 mb-6">
