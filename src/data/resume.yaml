@@ -11,7 +11,7 @@ profile:
   github: https://github.com/UgoBruzadin
   linkedin: https://linkedin.com/in/ugonunes
   summary: >
-    Neural Data Scientist and BCI researcher with 8+ years of experience conducting
+    Neural Data Scientist and Computational Neuroscience researcher with 10+ years of experience conducting
     human neuroscience research and developing machine learning models for neural signal
     decoding. Experienced in running structured EEG research sessions, building multimodal
     data pipelines, and translating neural and behavioral data into actionable insights
@@ -29,7 +29,7 @@ experience:
     period: April 2025 – Present
     bullets:
       - Designed and maintained end-to-end ML pipelines for large-scale multimodal datasets
-        (EEG, behavioral, physiological signals), from raw ingestion to validated model outputs.
+        (EEG, behavioral data, eye-tracking), from raw ingestion to validated model outputs.
       - Developed preprocessing workflows for artifact rejection, normalization, and feature
         standardization, improving model accuracy by up to 12%.
       - Engineered time-series features and learned representations to improve cross-subject
@@ -51,14 +51,14 @@ experience:
       - Designed machine learning model for EEG-based visual image reconstruction using
         EEG-to-CLIP feature alignment.
       - Led mental imagery reconstruction experimental design and synchronization using
-        PsychoPy, C++, and LSL.
+        PsychoPy
       - Implemented feature quality assessments and signal-to-noise metrics to improve
         downstream model performance.
 
-  - title: Postdoctoral Fellow
+  - title: Postdoctoral Fellow / Visiting Scholar
     company: Chapman University
     location: Orange, CA
-    period: September 2023 – May 2025
+    period: September 2023 – May 2025 / May 2025 – Present
     bullets:
       - Developed computational models decoding conscious perception using time-series EEG
         and machine learning to identify novel neural signatures predictive of conscious awareness.
@@ -91,8 +91,12 @@ experience:
 # ============================================================
 
 featuredProjects:
+  # image: filename inside public/projects/ (e.g. enigma.png)
+  # Leave image blank and a placeholder will be shown.
+
   - name: ENIGMA
     repo: ENIGMA
+    image:                  # drop enigma.png in public/projects/
     summary: Unified lightweight EEG-to-image model for multi-subject visual decoding. Submitted to CVPR 2026.
     tags: [EEG, Deep Learning, BCI, CVPR]
     why: Enables visual decoding from brain signals across multiple subjects with a single lightweight model.
@@ -100,10 +104,11 @@ featuredProjects:
     approach: Cross-modal alignment between EEG embeddings and visual latent spaces (CLIP).
     results: Outperforms prior per-subject models; generalized across subjects in held-out evaluations.
     stack: [PyTorch, CLIP, Python]
-    link: https://github.com/UgoBruzadin/ENIGMA
+    link: https://www.alljoined.com/blog/introducing-enigma
 
   - name: Alljoined-1.6M
     repo: Alljoined-1.6M
+    image:                  # drop alljoined.png in public/projects/
     summary: Large-scale EEG-image dataset with 1.6 million visual stimulus trials for affordable BCI research.
     tags: [EEG, Dataset, BCI, Open Science]
     why: Large-scale benchmark data is critical for training generalizable BCI models.
@@ -111,10 +116,11 @@ featuredProjects:
     approach: Systematic data collection across many participants with standardized preprocessing.
     results: Published on OpenArxiv 2025; enabling new SOTA benchmarks in EEG decoding.
     stack: [Python, MATLAB, LSL]
-    link: https://github.com/UgoBruzadin/Alljoined-1.6M
+    link: https://www.alljoined.com/blog/introducing-alljoined-1-6m
 
   - name: Triangulation Project
     repo: Triangulation_Project
+    image:                  # drop triangulation.png in public/projects/
     summary: Machine learning framework for decoding neural correlates of consciousness from EEG/ERP data.
     tags: [EEG, ML, Consciousness, Python]
     why: Identifying neural signatures of conscious awareness requires robust cross-task decoding.
@@ -126,6 +132,7 @@ featuredProjects:
 
   - name: QuickLab
     repo: QuickLab
+    image:                  # drop quicklab.png in public/projects/
     summary: Open-source EEGLAB plugin for high-speed EEG preprocessing and visualization.
     tags: [MATLAB, EEG, Open Source, Tool]
     why: EEG preprocessing pipelines are slow and hard to audit — QuickLab makes them fast and transparent.
@@ -137,6 +144,7 @@ featuredProjects:
 
   - name: CNN_benchmark_EEG_Blindness
     repo: CNN_benchmark_EEG_Blindness
+    image:                  # drop cnn_blindness.png in public/projects/
     summary: 3D CNN for classifying inattentional blindness from EEG signals; outperforms linear baselines.
     tags: [Deep Learning, EEG, CNN, Consciousness]
     why: Inattentional blindness is a clinically relevant conscious state that lacks reliable neural biomarkers.

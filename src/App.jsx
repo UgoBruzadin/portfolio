@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import ProjectCarousel from './components/Projects/ProjectCarousel'
 import Experience from './components/Experience'
-import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Education from './components/Education'
 import Publications from './components/Publications'
@@ -20,8 +20,8 @@ export default function App() {
       <Nav dark={dark} setDark={setDark} />
       <main className="max-w-4xl mx-auto px-6 pt-24 pb-16 space-y-24">
         <Hero />
+        <ProjectCarousel />
         <Experience />
-        <Projects />
         <Skills />
         <Education />
         <Publications />
