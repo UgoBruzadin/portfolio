@@ -1,7 +1,8 @@
 import { useState, useRef, useCallback } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useGithubProjects } from '../../hooks/useGithubProjects'
 import ProjectModal from './ProjectModal'
+import ProjectCard from './ProjectCard'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -92,9 +93,11 @@ export default function ProjectCarousel() {
   const { repos, loading } = useGithubProjects()
   const [selected, setSelected] = useState(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [showOthers, setShowOthers] = useState(false)
   const scrollRef = useRef(null)
 
   const featured = repos.featured ?? []
+  const others = repos.others ?? []
 
   const scrollTo = useCallback((index) => {
     const container = scrollRef.current
@@ -196,6 +199,47 @@ export default function ProjectCarousel() {
           />
         ))}
       </div>
+
+      {/* More repos dropdown */}
+      {others.length > 0 && (
+        <div className="mt-8">
+          <button
+            onClick={() => setShowOthers(!showOthers)}
+            className="btn-ghost w-full justify-center"
+          >
+            <svg
+              className={`w-3.5 h-3.5 transition-transform duration-200 ${showOthers ? 'rotate-180' : ''}`}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+            {showOthers ? 'Hide' : `${others.length} more repos on GitHub`}
+          </button>
+
+          <AnimatePresence initial={false}>
+            {showOthers && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                  {others.map((p, i) => (
+                    <ProjectCard
+                      key={p.name}
+                      project={p}
+                      index={i}
+                      onClick={() => setSelected(p)}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      )}
 
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
     </section>
