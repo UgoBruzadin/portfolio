@@ -3,7 +3,7 @@
 # ============================================================
 
 profile:
-  name: Ugo Bruzadin Nunes, PhD
+  name: Ugo Bruzadin Guenther-Nunes, PhD
   title: Neural Data Scientist
   subtitle: Brain–Computer Interface Researcher
   location: San Francisco, CA
@@ -13,10 +13,9 @@ profile:
   summary: >
     Neural Data Scientist and Computational Neuroscience researcher with 10+ years of experience conducting
     human neuroscience research and developing machine learning models for neural signal
-    decoding. Experienced in running structured EEG research sessions, building multimodal
-    data pipelines, and translating neural and behavioral data into actionable insights
-    for applied systems. Motivated by building brain–computer interface technologies that
-    directly improve user autonomy and experience.
+    decoding. Experienced in building multimodal end-to-end data pipelines, 
+    and translating neural and behavioral data into actionable insights for applied systems. 
+    Motivated by building brain–computer interface technologies that directly improve user autonomy and experience.
 
 # ============================================================
 # EXPERIENCE
@@ -118,7 +117,7 @@ featuredProjects:
     stack: [Python, MATLAB, LSL]
     link: https://www.alljoined.com/blog/introducing-alljoined-1-6m
 
-  - name: Novel Neural Correlates of Concsiousness
+  - name: Novel Neural Correlates of Consciousness
     repo: IB-ERP-cluster-analysis
     image: blindness.png                 # drop blindness.png in public/projects/
     summary: Novel neural signatures of inattentional blindness identified using cluster analysis of ERP data and time-frequency.
@@ -153,6 +152,9 @@ featuredProjects:
     results: ~500% improvement in processing speed; hosted in the official EEGLAB repository.
     stack: [MATLAB, EEGLAB]
     link: https://github.com/UgoBruzadin/QuickLab
+
+  - name: PhysREVE
+    repo: PhysREVE
 
   - name: Syn2Emo
     repo: Syn2Emo

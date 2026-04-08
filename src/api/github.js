@@ -4,3 +4,13 @@ export async function fetchRepos() {
   const data = await res.json()
   return data.filter(repo => !repo.fork)
 }
+
+export async function fetchPortfolioJson(repoName, username = 'UgoBruzadin') {
+  try {
+    const res = await fetch(`https://raw.githubusercontent.com/${username}/${repoName}/main/portfolio.json`)
+    if (!res.ok) return null
+    return await res.json()
+  } catch {
+    return null
+  }
+}
