@@ -93,6 +93,18 @@ featuredProjects:
   # image: filename inside public/projects/ (e.g. enigma.png)
   # Leave image blank and a placeholder will be shown.
 
+  - name: PhysREVE
+    repo: PhysREVE
+    image: https://raw.githubusercontent.com/UgoBruzadin/PhysREVE/main/PhysREVE_results1.png
+    summary: Physics-informed adapter that injects leadfield-derived electrode similarity into a frozen EEG foundation model, achieving +14.8% cross-subject improvement with a single learnable scalar.
+    tags: [EEG, BCI, Physics-Informed ML, PyTorch]
+    why: EEG statistics vary substantially across subjects (skull geometry, electrode placement), but the biophysical forward model does not — physics provides a subject-invariant prior that pretrained models lack.
+    problem: Pretrained EEG foundation models overfit to per-subject statistics; cross-subject generalisation remains a bottleneck even with large backbones like REVE (30M params).
+    approach: Derive electrode similarity matrix B_sim from the EEG leadfield (Maxwell forward model), inject it as a channel-mixing residual into a frozen REVE backbone. Only one scalar α is learned — the 30M backbone parameters never change.
+    results: +14.8% cross-subject balanced accuracy (0.338 → 0.388) on BCI Competition IV 2a, 4-class motor imagery, 9-subject LOSO. Physics prior beats scalp-geometry baseline in all 5 frequency bands on 109-subject PhysioNet validation.
+    stack: [Python, PyTorch, MNE-Python, NumPy]
+    link: https://github.com/UgoBruzadin/PhysREVE
+
   - name: ENIGMA
     repo: ENIGMA
     image: enigma.jpg                 # filename inside public/projects/
@@ -152,9 +164,6 @@ featuredProjects:
     results: ~500% improvement in processing speed; hosted in the official EEGLAB repository.
     stack: [MATLAB, EEGLAB]
     link: https://github.com/UgoBruzadin/QuickLab
-
-  - name: PhysREVE
-    repo: PhysREVE
 
   - name: Syn2Emo
     repo: Syn2Emo
