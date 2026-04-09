@@ -95,7 +95,7 @@ featuredProjects:
 
   - name: PhysREVE
     repo: PhysREVE
-    image: https://github.com/UgoBruzadin/PhysREVE/blob/main/figures/results_loso.png?raw=true
+    image: physreve.png                 # drop physreve.png in public/projects/
     summary: Physics-informed adapter that injects leadfield-derived electrode similarity into a frozen EEG foundation model, achieving +14.8% cross-subject improvement with a single learnable scalar.
     tags: [EEG, BCI, Physics-Informed ML, PyTorch]
     why: EEG statistics vary substantially across subjects (skull geometry, electrode placement), but the biophysical forward model does not — physics provides a subject-invariant prior that pretrained models lack.
