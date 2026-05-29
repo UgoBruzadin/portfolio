@@ -155,7 +155,7 @@ featuredProjects:
     approach: Analysis of two large EEG datasets with cluster analysis for spatiotemporal decoding of conscious states.
     results: Identified a novel neural correlate of consciousness (VAP) that outperforms traditional ERP components in predicting awareness across tasks.
     stack: [Python, Scikit-Learn]
-    link: https://github.com/UgoBruzadin/IB-ERP-cluster-analysis
+    github: https://github.com/UgoBruzadin/IB-ERP-cluster-analysis
 
   - name: Triangulation Project
     repo: Triangulation_Project
@@ -167,7 +167,7 @@ featuredProjects:
     approach: Temporal generalization with parallelized moving-window cross-validation.
     results: 134% speedup in analysis; novel signatures identified (VAP, inattentional blindness correlates).
     stack: [Python, Scikit-Learn, TensorFlow, SQL]
-    link: https://github.com/UgoBruzadin/Triangulation_Project
+    github: https://github.com/UgoBruzadin/Triangulation_Project
 
   - name: QuickLab
     repo: QuickLab
@@ -179,7 +179,7 @@ featuredProjects:
     approach: Parallelized MATLAB processing with a streamlined GUI.
     results: ~500% improvement in processing speed; hosted in the official EEGLAB repository.
     stack: [MATLAB, EEGLAB]
-    link: https://github.com/UgoBruzadin/QuickLab
+    github: https://github.com/UgoBruzadin/QuickLab
 
   - name: Syn2Emo
     repo: Syn2Emo
@@ -192,7 +192,7 @@ featuredProjects:
     results: GPT-4o achieved avg. Pearson r = 0.814 (RMSE 1.504); all three frontier models scored within 0.013 of each other, with r > 0.85 on happiness, sadness, fear, and disgust.
     stack: [Python, GPT-4o, Llama, Gemma, OpenAI API]
     private: true
-    link: https://github.com/UgoBruzadin/Syn2Emo
+    github: https://github.com/UgoBruzadin/Syn2Emo
 
 
 # ============================================================
