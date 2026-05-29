@@ -93,6 +93,18 @@ featuredProjects:
   # image: filename inside public/projects/ (e.g. enigma.png)
   # Leave image blank and a placeholder will be shown.
 
+  - name : NOVA
+    repo : NOVA-affect-decoding
+    image : #nova.png # drop nova.png in public/projects/
+    summary : A large-scale EEG-affect dataset and decoding framework featuring 3,408 strictly curated video-evoked trials to model complex human emotional states.
+    tags : [EEG , Affective Computing , BCI , Signal Processing ]
+    why : Human intelligence and cognition are fundamentally shaped by emotion, yet neural affective decoding remains notoriously fragile due to experimental noise and weak stimulus validation.
+    problem : Existing emotion-EEG datasets suffer from low trial counts and loose experimental controls, causing deep learning models to overfit to transient noise or experimental artifacts rather than genuine affective states.
+    approach : Developed a rigorous 3-stage stimulus curation pipeline to isolate 408 highly reliable emotion-evoking video clips across 6 categories (Anger, Sadness, Fear, Disgust, Happiness, Neutral). Built a highly expressive Power Spectral Density (PSD) feature space (~6,231 features across 31 channels) to map full spectral fingerprints during continuous 1-5 minute trials.
+    results : Constructed one of the largest robust EEG-emotion corpuses in the field (3,408 paired trials across 24 diverse participants). Achieved state-of-the-art single-subject decoding accuracy of up to 75% on a challenging six-way classification task using baseline ridge models, proving the exceptional signal clarity and label quality of the dataset.
+    stack : [Python, Pytorch, MNE-Python, Scikit-Learn, NumPy]
+    link : https://www.alljoined.com/blog/introducing-nova
+
   - name: PhysREVE
     repo: PhysREVE
     image: physreve.png                 # drop physreve.png in public/projects/
