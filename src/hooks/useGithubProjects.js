@@ -21,7 +21,7 @@ export function useGithubProjects() {
             ...portfolio,
             repo: p.repo,
             stars: match?.stargazers_count ?? 0,
-            githubUrl: match?.html_url ?? p.link,
+            githubUrl: p.github ?? portfolio.github ?? match?.html_url ?? null,
             language: match?.language ?? null,
           }
         })

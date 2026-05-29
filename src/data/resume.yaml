@@ -95,7 +95,7 @@ featuredProjects:
 
   - name : NOVA
     repo : NOVA-affect-decoding
-    image : #nova.png # drop nova.png in public/projects/
+    image : nova.png # drop nova.png in public/projects/
     summary : A large-scale EEG-affect dataset and decoding framework featuring 3,408 strictly curated video-evoked trials to model complex human emotional states.
     tags : [EEG , Affective Computing , BCI , Signal Processing ]
     why : Human intelligence and cognition are fundamentally shaped by emotion, yet neural affective decoding remains notoriously fragile due to experimental noise and weak stimulus validation.
@@ -103,7 +103,7 @@ featuredProjects:
     approach : Developed a rigorous 3-stage stimulus curation pipeline to isolate 408 highly reliable emotion-evoking video clips across 6 categories (Anger, Sadness, Fear, Disgust, Happiness, Neutral). Built a highly expressive Power Spectral Density (PSD) feature space (~6,231 features across 31 channels) to map full spectral fingerprints during continuous 1-5 minute trials.
     results : Constructed one of the largest robust EEG-emotion corpuses in the field (3,408 paired trials across 24 diverse participants). Achieved state-of-the-art single-subject decoding accuracy of up to 75% on a challenging six-way classification task using baseline ridge models, proving the exceptional signal clarity and label quality of the dataset.
     stack : [Python, Pytorch, MNE-Python, Scikit-Learn, NumPy]
-    link : https://www.alljoined.com/blog/introducing-nova
+    blog : https://www.alljoined.com/blog/introducing-nova
 
   - name: PhysREVE
     repo: PhysREVE
@@ -127,7 +127,9 @@ featuredProjects:
     approach: Cross-modal alignment between EEG embeddings and visual latent spaces (CLIP).
     results: Outperforms prior per-subject models; generalized across subjects in held-out evaluations.
     stack: [PyTorch, CLIP, Python]
-    link: https://www.alljoined.com/blog/introducing-enigma
+    blog: https://www.alljoined.com/blog/introducing-enigma
+    github: https://github.com/UgoBruzadin/ENIGMA
+    # huggingface: https://huggingface.co/...
 
   - name: Alljoined-1.6M
     repo: Alljoined-1.6M
@@ -139,7 +141,9 @@ featuredProjects:
     approach: Systematic data collection across many participants with standardized preprocessing.
     results: Published on OpenArxiv 2025; enabling new SOTA benchmarks in EEG decoding.
     stack: [Python, MATLAB, LSL]
-    link: https://www.alljoined.com/blog/introducing-alljoined-1-6m
+    blog: https://www.alljoined.com/blog/introducing-alljoined-1-6m
+    github: https://github.com/Alljoined/Alljoined-1.6M
+    huggingface: https://huggingface.co/datasets/Alljoined/Alljoined-1.6M
 
   - name: Novel Neural Correlates of Consciousness
     repo: IB-ERP-cluster-analysis
