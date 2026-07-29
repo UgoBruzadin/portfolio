@@ -105,6 +105,19 @@ featuredProjects:
     stack : [Python, Pytorch, MNE-Python, Scikit-Learn, NumPy]
     blog : https://www.alljoined.com/blog/introducing-nova
 
+  - name: CLIP Semantic Axis Geometry
+    repo: clip-semantic-axis-geometry
+    image: clip-axis.png                 # drop clip-axis.png in public/projects/
+    summary: Probes CLIP ViT-L/14's representational geometry along category, perceptual, and spatial semantic axes — revealing strongly anisotropic alignment (category encoded ~6× more discriminatively than spatial) with direct consequences for EEG-to-image decoding.
+    tags: [CLIP, Vision-Language, EEG, Representation Geometry]
+    why: EEG-to-image decoders target CLIP's shared embedding space as a bridge between neural signals and visual content, but CLIP encodes some semantic dimensions far more reliably than others — which bounds what any decoder can recover regardless of neural signal quality.
+    problem: CLIP was trained on web image-caption pairs that emphasise object identity over spatial relations or fine perceptual attributes, so its representational geometry is non-uniform and largely uncharacterised across distinct semantic axes and levels of descriptive detail.
+    approach: 2-factor design crossing semantic axis (category / perceptual / spatial) with granularity (G1–G4) over 200 THINGS-EEG2 images and 3,600 axis-isolated captions. Measured discriminability, within/between ratio, incremental gain and signal-to-noise with 10k-sample bootstrap CIs, Wilcoxon signed-rank, Holm-Bonferroni correction and a mixed-effects model.
+    results: Alignment is strongly anisotropic — category ≫ perceptual ≫ spatial (all pairwise p < 0.001). Added detail yields diminishing but never negative returns; spatial is the only fragile axis (SNR < 1 — wording moves the embedding more than meaning), motivating alternative models for spatial EEG decoding.
+    stack: [Python, PyTorch, CLIP, scikit-learn, statsmodels]
+    github: https://github.com/UgoBruzadin/clip-semantic-axis-geometry
+    paper: https://github.com/UgoBruzadin/clip-semantic-axis-geometry/blob/main/docs/writeup.pdf
+
   - name: PhysREVE
     repo: PhysREVE
     image: physreve.png                 # drop physreve.png in public/projects/
