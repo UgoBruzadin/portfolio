@@ -1,92 +1,199 @@
 /**
- * @typedef {{id:string,title:string,subtitle?:string,blurb?:string,contribution?:string,year?:number,roles:string[],links?:Object,featured?:boolean}} Project
+ * @typedef {{name:string,repo:string,image?:string,summary:string,tags:string[],why?:string,problem?:string,approach?:string,results?:string,stack?:string[],role?:string,github?:string,paper?:string,blog?:string,huggingface?:string,link?:string,private?:boolean,featured:boolean,highlight?:boolean}} Project
  */
 
 /** @type {Project[]} */
 export const projects = [
     {
-        id: 'enigma',
-        repo: 'ENIGMA',
-        title: 'ENIGMA: EEG-to-Image in 15 Minutes',
-        subtitle: 'Unified lightweight EEG-to-image model',
-        blurb: 'Cross-modal alignment between EEG embeddings and visual latent spaces enabling multi-subject image reconstruction.',
-        contribution: 'Preprocessing and cross-subject alignment pipeline; ablation studies and model evaluation.',
-        year: 2026,
-        roles: ['ml-research', 'data-science', 'neuroscience'],
-        links: {
-            paper: 'https://arxiv.org/abs/2602.10361',
-            repo: 'https://github.com/Alljoined/ENIGMA',
-            notes: 'TMLR (Transactions on Machine Learning Research) — in press (2026); NeurIPS 2025 workshop poster'
-        },
+        name: 'US Corn Yield Geospatial',
+        repo: 'usda-crop-yield-geospatial',
+        image: 'usda-corn.svg',
+        summary: 'County-level US corn yield (2005-2024) from USDA NASS joined to Census boundaries via GeoPandas, cleaned into a Tableau-Public-ready dataset.',
+        tags: ['GeoPandas', 'Geospatial', 'USDA NASS', 'Census TIGER', 'Tableau', 'Python', 'EDA'],
+        why: 'A quick, self-contained geospatial data engineering project to demonstrate pulling, cleaning, and spatially joining real government data end to end, and shipping it as a dataset ready for a BI tool rather than stopping at a notebook.',
+        problem: "USDA crop yield statistics and Census county boundaries live in separate systems with no shared key exposed to end users; turning them into a single clean, join-ready file for mapping/BI requires reconciling FIPS codes, handling NASS's undisclosed-county rows, and keeping file size sane for tools like Tableau Public.",
+        approach: "Streamed USDA NASS's keyless bulk crops flat file and filtered on the fly to county-level corn grain yield without storing the full file; joined to Census cartographic county boundaries on FIPS; split output into a lightweight boundaries GeoJSON plus a full county-year CSV panel to keep the Tableau handoff practical.",
+        results: '31,441 county-year rows across 2,248 counties and 41 states, 0 unmatched FIPS. County-average yield rose ~+2.25 bu/acre/year (+25% over 20 years); the 2012 Midwest drought is clearly visible (-9.8% YoY, then +30.6% rebound); irrigated western counties average 200+ bu/acre vs 50-65 in dryland Great Plains counties.',
+        stack: ['Python', 'GeoPandas', 'Pandas', 'Shapely', 'Matplotlib', 'Tableau Public'],
+        github: 'https://github.com/UgoBruzadin/usda-crop-yield-geospatial',
         featured: true
     },
 
     {
-        repo: 'Alljoined-1.6M',
-        image: 'alljoined1.6m.png',
-        tags: ['Dataset', 'EEG'],
-        id: 'alljoined-1.6m',
-        repo: 'Alljoined-1.6M',
-        title: 'Alljoined-1.6M',
-        subtitle: 'A million-trial EEG–image dataset for affordable BCI research',
-        blurb: 'Large-scale visual-stimulus EEG dataset enabling robust cross-subject decoding benchmarks.',
-        contribution: 'Data curation and preprocessing pipelines; dataset release coordination.',
-        year: 2025,
-        roles: ['data-science', 'ml-research', 'neuroscience'],
-        links: {
-            paper: 'https://arxiv.org/abs/2508.18571',
-            repo: 'https://github.com/Alljoined/Alljoined-1.6M',
-            huggingface: 'https://huggingface.co/datasets/Alljoined/Alljoined-1.6M'
-        },
+        name: 'SEA-AD Single-Cell Tutorial (Python)',
+        repo: 'sea-ad-python-scanpy',
+        image: 'sea-ad-tutorial.svg',
+        summary: "A hands-on scanpy teaching series on the same SEA-AD Alzheimer's cortex multiome data — QC, integration, clustering, annotation, and differential expression, each notebook paired with homework and worked solutions.",
+        tags: ['scanpy', 'Python', 'Single-Cell', 'AnnData', "Alzheimer's Disease", 'Tutorial'],
+        why: "Built to actually learn single-cell analysis hands-on in Jupyter Notebooks — each notebook teaches a concept, demonstrates it on real data, then leaves homework to work through.",
+        problem: "Single-cell genomics has a real learning curve (AnnData structure, QC conventions, batch correction, marker-based annotation, differential expression) that's hard to absorb from a finished pipeline alone.",
+        approach: '6-notebook progression in scanpy — AnnData basics, QC/filtering, normalization + Harmony integration + Leiden/UMAP, marker-gene annotation validated against ground truth, differential expression by AD pathology group, and a bonus intro to the paired ATAC data — each with a real worked example plus homework and a separate solutions notebook.',
+        results: "152,212 QC-passed nuclei across 8 donors, 35 Leiden clusters, 90.2% marker-based annotation agreement with SEA-AD's reference labels. Differential expression between AD pathology groups (52,454 excitatory nuclei) found 10,422/36,601 genes significant, with the top hits' direction confirmed at pseudobulk (donor) level.",
+        stack: ['Python', 'scanpy', 'AnnData', 'Harmony', 'Jupyter'],
+        github: 'https://github.com/UgoBruzadin/sea-ad-python-scanpy',
         featured: true
     },
 
     {
-        repo: 'Triangulation_Project',
-        image: 'triangulation.png',
-        tags: ['EEG', 'Consciousness'],
-        id: 'triangulation',
-        repo: 'Triangulation_Project',
-        title: 'Triangulation Project',
-        subtitle: 'Framework for consciousness decoding',
-        blurb: 'Temporal generalization and parallelized moving-window cross-validation for EEG analyses.',
-        contribution: 'Implemented cross-validation framework and performance optimizations.',
-        year: 2024,
-        roles: ['ml-research', 'neuroscience'],
-        links: { repo: 'https://github.com/UgoBruzadin/Triangulation_Project' },
-        featured: false
+        name: 'CLIP Semantic Axis Geometry',
+        repo: 'clip-semantic-axis-geometry',
+        image: 'clip-axis.png',
+        summary: "Probes CLIP ViT-L/14's representational geometry along category, perceptual, and spatial semantic axes — revealing strongly anisotropic alignment (category encoded ~6× more discriminatively than spatial) with direct consequences for EEG-to-image decoding.",
+        tags: ['CLIP', 'Vision-Language', 'EEG', 'Representation Geometry'],
+        why: "EEG-to-image decoders target CLIP's shared embedding space as a bridge between neural signals and visual content, but CLIP encodes some semantic dimensions far more reliably than others — which bounds what any decoder can recover regardless of neural signal quality.",
+        problem: "CLIP was trained on web image-caption pairs that emphasise object identity over spatial relations or fine perceptual attributes, so its representational geometry is non-uniform and largely uncharacterised across distinct semantic axes and levels of descriptive detail.",
+        approach: '2-factor design crossing semantic axis (category / perceptual / spatial) with granularity (G1–G4) over 200 THINGS-EEG2 images and 3,600 axis-isolated captions. Measured discriminability, within/between ratio, incremental gain and signal-to-noise with 10k-sample bootstrap CIs, Wilcoxon signed-rank, Holm-Bonferroni correction and a mixed-effects model.',
+        results: 'Alignment is strongly anisotropic — category ≫ perceptual ≫ spatial (all pairwise p < 0.001). Added detail yields diminishing but never negative returns; spatial is the only fragile axis (SNR < 1 — wording moves the embedding more than meaning), motivating alternative models for spatial EEG decoding.',
+        stack: ['Python', 'PyTorch', 'CLIP', 'scikit-learn', 'statsmodels'],
+        github: 'https://github.com/UgoBruzadin/clip-semantic-axis-geometry',
+        paper: 'https://github.com/UgoBruzadin/clip-semantic-axis-geometry/blob/main/docs/writeup.pdf',
+        featured: true
     },
 
     {
-        repo: 'QuickLab',
-        image: 'quicklab.png',
-        tags: ['MATLAB', 'Open Source'],
-        id: 'quicklab',
-        repo: 'QuickLab',
-        title: 'QuickLab',
-        subtitle: 'EEG preprocessing & visualization EEGLAB plugin',
-        blurb: 'High-speed, auditable preprocessing for multi-session EEG data.',
-        contribution: 'Implemented parallelized MATLAB processing and streamlined GUIs.',
-        year: 2022,
-        roles: ['neuroscience', 'data-science'],
-        links: { repo: 'https://github.com/UgoBruzadin/QuickLab' },
-        featured: false
-    },
-
-    {
+        name: 'PhysREVE',
         repo: 'PhysREVE',
         image: 'physreve.png',
-        tags: ['ML', 'EEG'],
-        id: 'physreve',
-        repo: 'PhysREVE',
-        title: 'PhysREVE',
-        subtitle: 'Physics-informed EEG adapter',
-        blurb: 'Injects leadfield-derived electrode similarity into a frozen EEG foundation model to improve cross-subject performance.',
-        contribution: 'Developed physics prior and integration into pretrained backbones.',
-        year: 2025,
-        roles: ['ml-research', 'neuroscience'],
-        links: { repo: 'https://github.com/UgoBruzadin/PhysREVE' },
-        featured: false
+        summary: 'Physics-informed adapter that injects leadfield-derived electrode similarity into a frozen EEG foundation model, achieving +14.8% cross-subject improvement with a single learnable scalar.',
+        tags: ['EEG', 'BCI', 'Physics-Informed ML', 'PyTorch'],
+        why: 'EEG statistics vary substantially across subjects (skull geometry, electrode placement), but the biophysical forward model does not — physics provides a subject-invariant prior that pretrained models lack.',
+        problem: 'Pretrained EEG foundation models overfit to per-subject statistics; cross-subject generalisation remains a bottleneck even with large backbones like REVE (30M params).',
+        approach: 'Derive electrode similarity matrix B_sim from the EEG leadfield (Maxwell forward model), inject it as a channel-mixing residual into a frozen REVE backbone. Only one scalar α is learned — the 30M backbone parameters never change.',
+        results: '+14.8% cross-subject balanced accuracy (0.338 → 0.388) on BCI Competition IV 2a, 4-class motor imagery, 9-subject LOSO. Physics prior beats scalp-geometry baseline in all 5 frequency bands on 109-subject PhysioNet validation.',
+        stack: ['Python', 'PyTorch', 'MNE-Python', 'NumPy'],
+        github: 'https://github.com/UgoBruzadin/PhysREVE',
+        featured: true
+    },
+
+    {
+        name: 'Syn2Emo',
+        repo: 'Syn2Emo',
+        image: 'syn2emo.png',
+        summary: 'Benchmarks multimodal LLMs as synthetic emotion annotators, achieving r = 0.814 correlation with human ratings — enabling scalable affective labeling without costly lab studies.',
+        tags: ['LLM', 'Affective Computing', 'Python', 'Benchmarking'],
+        why: 'Open emotion datasets total only ~3,500 images — far too small for modern deep learning; human labeling is slow and expensive.',
+        problem: 'Fine-grained dimensional emotion ratings (valence, arousal, discrete emotions) are scarce; categorical datasets like EmoSet (118K images) lack the psychological depth neuroscience requires.',
+        approach: 'Calibrated multimodal LLM prompts (GPT-4o, Llama-4-Maverick, Gemma-3-27B) to predict viewer emotional responses as structured JSON, benchmarked against gold-standard NAPS human ratings across 510 images.',
+        results: 'GPT-4o achieved avg. Pearson r = 0.814 (RMSE 1.504); all three frontier models scored within 0.013 of each other, with r > 0.85 on happiness, sadness, fear, and disgust.',
+        stack: ['Python', 'GPT-4o', 'Llama', 'Gemma', 'OpenAI API'],
+        private: true,
+        github: 'https://github.com/UgoBruzadin/Syn2Emo',
+        featured: true
+    },
+
+    {
+        name: 'NOVA',
+        repo: 'NOVA-affect-decoding',
+        image: 'nova.png',
+        summary: 'A large-scale EEG-affect dataset and decoding framework featuring 3,408 strictly curated video-evoked trials to model complex human emotional states.',
+        tags: ['EEG', 'Affective Computing', 'BCI', 'Signal Processing'],
+        why: 'Human intelligence and cognition are fundamentally shaped by emotion, yet neural affective decoding remains notoriously fragile due to experimental noise and weak stimulus validation.',
+        problem: 'Existing emotion-EEG datasets suffer from low trial counts and loose experimental controls, causing deep learning models to overfit to transient noise or experimental artifacts rather than genuine affective states.',
+        approach: 'Developed a rigorous 3-stage stimulus curation pipeline to isolate 408 highly reliable emotion-evoking video clips across 6 categories (Anger, Sadness, Fear, Disgust, Happiness, Neutral). Built a highly expressive Power Spectral Density (PSD) feature space (~6,231 features across 31 channels) to map full spectral fingerprints during continuous 1-5 minute trials.',
+        results: 'Constructed one of the largest robust EEG-emotion corpuses in the field (3,408 paired trials across 24 diverse participants). Achieved state-of-the-art single-subject decoding accuracy of up to 75% on a challenging six-way classification task using baseline ridge models, proving the exceptional signal clarity and label quality of the dataset.',
+        stack: ['Python', 'Pytorch', 'MNE-Python', 'Scikit-Learn', 'NumPy'],
+        blog: 'https://www.alljoined.com/blog/introducing-nova',
+        featured: true
+    },
+
+    {
+        name: 'ENIGMA',
+        repo: 'ENIGMA',
+        image: 'enigma.jpg',
+        summary: 'Unified lightweight EEG-to-image model for multi-subject visual decoding. Transactions on Machine Learning Research (TMLR), in press 2026; poster at the NeurIPS 2025 Foundation Models for the Brain and Body Workshop.',
+        tags: ['EEG', 'Deep Learning', 'BCI', 'TMLR'],
+        why: 'Enables visual decoding from brain signals across multiple subjects with a single lightweight model.',
+        problem: 'Existing models overfit to single subjects and require massive compute.',
+        approach: 'Cross-modal alignment between EEG embeddings and visual latent spaces (CLIP).',
+        results: 'Outperforms prior per-subject models; generalized across subjects in held-out evaluations.',
+        stack: ['PyTorch', 'CLIP', 'Python'],
+        role: 'My role: preprocessing and cross-subject alignment pipeline; ablation studies and model evaluation.',
+        blog: 'https://www.alljoined.com/blog/introducing-enigma',
+        github: 'https://github.com/Alljoined/ENIGMA',
+        paper: 'https://arxiv.org/abs/2602.10361',
+        featured: true,
+        highlight: true
+    },
+
+    {
+        name: 'Alljoined-1.6M',
+        repo: 'Alljoined-1.6M',
+        image: 'alljoined1.6m.png',
+        summary: 'Large-scale EEG-image dataset with 1.6 million visual stimulus trials for affordable BCI research.',
+        tags: ['EEG', 'Dataset', 'BCI', 'Open Science'],
+        why: 'Large-scale benchmark data is critical for training generalizable BCI models.',
+        problem: 'Existing EEG datasets are too small for robust cross-subject generalization.',
+        approach: 'Systematic data collection across many participants with standardized preprocessing.',
+        results: 'arXiv preprint (2025); enabling new SOTA benchmarks in EEG decoding.',
+        stack: ['Python', 'MATLAB', 'LSL'],
+        role: 'My role: built and maintained the scalable data pipeline (raw ingestion to validated features) and GPU-cluster training infrastructure.',
+        blog: 'https://www.alljoined.com/blog/introducing-alljoined-1-6m',
+        github: 'https://github.com/Alljoined/Alljoined-1.6M',
+        huggingface: 'https://huggingface.co/datasets/Alljoined/Alljoined-1.6M',
+        paper: 'https://arxiv.org/abs/2508.18571',
+        featured: true,
+        highlight: true
+    },
+
+    {
+        name: 'Novel Neural Correlates of Consciousness',
+        repo: 'IB-ERP-cluster-analysis',
+        image: 'blindness.png',
+        summary: 'Novel neural signatures of inattentional blindness identified using cluster analysis of ERP data and time-frequency.',
+        tags: ['Deep Learning', 'EEG', 'CNN', 'Consciousness'],
+        why: 'Inattentional blindness is a clinically relevant conscious state that lacks reliable neural biomarkers.',
+        problem: 'Traditional ERP analyses fail to capture complex spatiotemporal patterns predictive of conscious awareness in inattentional blindness.',
+        approach: 'Analysis of two large EEG datasets with cluster analysis for spatiotemporal decoding of conscious states.',
+        results: 'Identified a novel neural correlate of consciousness (VAP) that outperforms traditional ERP components in predicting awareness across tasks.',
+        stack: ['Python', 'Scikit-Learn'],
+        github: 'https://github.com/UgoBruzadin/IB-ERP-cluster-analysis',
+        featured: true
+    },
+
+    {
+        name: 'Triangulation Project',
+        repo: 'Triangulation_Project',
+        image: 'triangulation.png',
+        summary: 'Machine learning framework for decoding neural correlates of consciousness from EEG/ERP data.',
+        tags: ['EEG', 'ML', 'Consciousness', 'Python'],
+        why: 'Identifying neural signatures of conscious awareness requires robust cross-task decoding.',
+        problem: 'ERP-based decoding rarely generalizes across tasks and time windows.',
+        approach: 'Temporal generalization with parallelized moving-window cross-validation.',
+        results: '134% speedup in analysis; novel signatures identified (VAP, inattentional blindness correlates).',
+        stack: ['Python', 'Scikit-Learn', 'TensorFlow', 'SQL'],
+        github: 'https://github.com/UgoBruzadin/Triangulation_Project',
+        featured: true,
+        highlight: true
+    },
+
+    {
+        name: 'QuickLab',
+        repo: 'QuickLab',
+        image: 'quicklab.png',
+        summary: 'Open-source EEGLAB plugin for high-speed EEG preprocessing and visualization.',
+        tags: ['MATLAB', 'EEG', 'Open Source', 'Tool'],
+        why: 'EEG preprocessing pipelines are slow and hard to audit — QuickLab makes them fast and transparent.',
+        problem: 'Standard EEGLAB workflows are slow for large multi-session datasets.',
+        approach: 'Parallelized MATLAB processing with a streamlined GUI.',
+        results: '~500% improvement in processing speed; hosted in the official EEGLAB repository.',
+        stack: ['MATLAB', 'EEGLAB'],
+        github: 'https://github.com/UgoBruzadin/QuickLab',
+        featured: true,
+        highlight: true
+    },
+
+    {
+        name: 'SEA-AD MTG Multiome',
+        repo: 'sea-ad-multiome-cortex',
+        summary: "Paired snRNA+snATAC (10x Multiome) analysis of human cortex across the Alzheimer's pathology spectrum — QC through WNN clustering, marker-based annotation, and differential chromatin accessibility, in Seurat/Signac.",
+        tags: ['snRNA-seq', 'snATAC-seq', 'Multiome', 'Seurat', 'Signac', "Alzheimer's Disease", 'R'],
+        why: "A labmate co-authored the closest real dataset (Harari/DIAN), but that cohort sits behind a NIAGADS Data Use Agreement; SEA-AD (Allen Institute) is a fully open substitute in the same domain — human AD cortex, paired RNA+ATAC — letting the same analysis run end to end on public data.",
+        problem: 'Single-cell multiome data requires separately correcting and clustering two different modalities (RNA, ATAC) per nucleus, then fusing them into one joint representation, before any biological question about disease pathology can be asked.',
+        approach: "Harmony-corrected RNA PCA + TF-IDF/LSI on ATAC, combined via Seurat's weighted-nearest-neighbor (WNN) graph for joint clustering; marker-gene cell-type calls validated against SEA-AD's own reference labels; per-cell-type differential accessibility (logistic-regression test, depth-corrected) between High and Low/Not-AD neuropathology donors.",
+        results: "8 donors, ~39,900 paired nuclei, 90.5% marker-based annotation agreement with SEA-AD's reference labels. Over 1,000 significant differentially accessible peaks across 7 cell types comparing High vs Low/Not-AD pathology, consistently skewed toward increased accessibility in high-pathology donors (e.g. astrocytes: 416/23,984 peaks, 381 up vs 35 down).",
+        stack: ['R', 'Seurat', 'Signac', 'Harmony', 'R Markdown'],
+        github: 'https://github.com/UgoBruzadin/sea-ad-multiome-cortex',
+        featured: true
     }
 ]
 

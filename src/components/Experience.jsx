@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { experience } from '../data/resume'
 
 function ExperienceItem({ item, index }) {
-  const [open, setOpen] = useState(index === 0)
+  const hasBullets = item.bullets && item.bullets.length > 0
+  const [open, setOpen] = useState(index === 0 && hasBullets)
 
   return (
     <motion.div
@@ -17,8 +18,8 @@ function ExperienceItem({ item, index }) {
       <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-neural-400 border-2 border-white dark:border-[#080d1a]" />
 
       <button
-        onClick={() => setOpen(!open)}
-        className="w-full text-left group"
+        onClick={() => hasBullets && setOpen(!open)}
+        className={`w-full text-left group ${hasBullets ? '' : 'cursor-default'}`}
       >
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
           <div>
@@ -34,15 +35,23 @@ function ExperienceItem({ item, index }) {
           </span>
         </div>
 
-        <div className="flex items-center gap-1 text-xs text-slate-400 dark:text-slate-500 mt-2">
-          <span>{open ? 'collapse' : 'expand'}</span>
-          <svg
-            className={`w-3 h-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
-            fill="none" viewBox="0 0 24 24" stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
+        {item.summary && (
+          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-2">
+            {item.summary}
+          </p>
+        )}
+
+        {hasBullets && (
+          <div className="flex items-center gap-1 text-xs text-slate-400 dark:text-slate-500 mt-2">
+            <span>{open ? 'collapse' : 'expand'}</span>
+            <svg
+              className={`w-3 h-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        )}
       </button>
 
       <AnimatePresence initial={false}>

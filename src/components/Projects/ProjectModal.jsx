@@ -80,6 +80,12 @@ export default function ProjectModal({ project, onClose }) {
               </div>
             )}
 
+            {project.role && (
+              <p className="text-sm font-medium text-neural-600 dark:text-neural-400 mb-6">
+                {project.role}
+              </p>
+            )}
+
             {project.why && (
               <div className="space-y-4 mb-6">
                 {rows.map(({ label, key }) =>

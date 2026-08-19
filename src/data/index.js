@@ -1,33 +1,20 @@
-import { profile } from './profile'
-import { experience } from './experience'
-import { projects as rawProjects } from './projects'
-import { publications } from './publications'
-import { teaching } from './teaching'
-import { education } from './education'
-import { skills } from './skills'
-import { awards } from './awards'
+import { profile } from './profile.js'
+import { experience } from './experience.js'
+import { projects } from './projects.js'
+import { publications } from './publications.js'
+import { teaching } from './teaching.js'
+import { education } from './education.js'
+import { skills } from './skills.js'
+import { awards } from './awards.js'
 
-// Normalize project objects to maintain compatibility with older components
-const projects = rawProjects.map(p => ({
-    // legacy keys expected by components
-    name: p.title || p.name,
-    summary: p.blurb || p.summary || p.subtitle || '',
-    tags: p.tags || [],
-    image: p.image || null,
-    stars: p.stars || 0,
-    repo: p.repo || p.id || (p.title ? p.title.replace(/\s+/g, '-') : undefined),
-    // keep original fields available
-    ...p,
-}))
-
-export { profile } from './profile'
-export { experience } from './experience'
-export { publications } from './publications'
-export { teaching } from './teaching'
-export { education } from './education'
-export { skills } from './skills'
-export { awards } from './awards'
-export { projects }
+export { profile } from './profile.js'
+export { experience } from './experience.js'
+export { projects } from './projects.js'
+export { publications } from './publications.js'
+export { teaching } from './teaching.js'
+export { education } from './education.js'
+export { skills } from './skills.js'
+export { awards } from './awards.js'
 export const featuredProjects = projects.filter(p => p.featured)
 
 export default {

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
+const BASE = import.meta.env.BASE_URL
+
 const links = [
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
@@ -49,6 +51,18 @@ export default function Nav({ dark, setDark }) {
           ))}
         </nav>
 
+        <div className="flex items-center gap-2">
+        <a
+          href={`${BASE}Ugo_Bruzadin_Nunes_CV.pdf`}
+          target="_blank"
+          rel="noreferrer"
+          className="hidden sm:inline-flex items-center gap-1.5 text-sm text-slate-600 dark:text-slate-400 hover:text-neural-500 dark:hover:text-neural-400 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-1.5 transition-colors"
+        >
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+          </svg>
+          CV
+        </a>
         <button
           onClick={() => setDark(!dark)}
           className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
@@ -64,6 +78,7 @@ export default function Nav({ dark, setDark }) {
             </svg>
           )}
         </button>
+        </div>
       </div>
     </motion.header>
   )

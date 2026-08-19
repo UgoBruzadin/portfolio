@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "gen-readme": "node scripts/gen-readme.js",
+    "gen-profile-readme": "node scripts/gen-profile-readme.js",
+    "prebuild": "node scripts/gen-readme.js",
     "build": "vite build",
     "preview": "vite preview"
   },
