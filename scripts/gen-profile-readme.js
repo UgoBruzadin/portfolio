@@ -79,6 +79,13 @@ function buildReadme() {
     lines.push(`- [💼 LinkedIn](${profile.linkedin})`)
     lines.push(`- [🌐 Portfolio](https://ugobruzadin.github.io/portfolio/)`)
     lines.push('')
+
+    // Personal flourishes — not sourced from portfolio data, kept static here.
+    lines.push('## 🎯 Fun Facts')
+    lines.push('')
+    lines.push('- **Pronouns:** He/Him/His')
+    lines.push('- **Fun fact:** Recent dad who loves spending time with my kid! Also a hardcore gamer who enjoys disconnecting to touch grass in the wild.')
+    lines.push('')
     lines.push('---')
     lines.push('')
     lines.push('⭐ **Check out my [interactive portfolio](https://ugobruzadin.github.io/portfolio/)** for detailed project showcases, experience timeline, and publications!')
