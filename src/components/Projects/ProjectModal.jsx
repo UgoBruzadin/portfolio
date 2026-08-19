@@ -55,15 +55,22 @@ export default function ProjectModal({ project, onClose }) {
               </button>
             </div>
 
-            {project.image && (
-              <div className="mb-6 flex justify-center">
+            <div className="mb-6 flex justify-center">
+              {project.image ? (
                 <img
                   src={project.image.startsWith('http') ? project.image : `${BASE}projects/${project.image}`}
                   alt={project.name}
                   className="max-h-60 w-full max-w-xl rounded-xl object-contain border border-slate-200 dark:border-slate-700"
                 />
-              </div>
-            )}
+              ) : (
+                <div className="w-full max-w-xl h-44 rounded-xl flex items-center justify-center bg-gradient-to-r from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-700 text-slate-500 border border-slate-200 dark:border-slate-700">
+                  <div className="text-center">
+                    <div className="text-lg font-semibold">{project.name}</div>
+                    <div className="text-sm mt-1">{project.subtitle || project.summary || ''}</div>
+                  </div>
+                </div>
+              )}
+            </div>
 
             {project.tags && (
               <div className="flex flex-wrap gap-2 mb-6">

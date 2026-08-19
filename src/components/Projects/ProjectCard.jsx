@@ -12,15 +12,22 @@ export default function ProjectCard({ project, onClick, index }) {
       onClick={onClick}
       className="card cursor-pointer hover:border-neural-400/60 dark:hover:border-neural-400/40 hover:shadow-lg hover:shadow-neural-400/5 transition-all duration-200 group"
     >
-      {project.image && (
-        <div className="mb-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800">
+      <div className="mb-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800">
+        {project.image ? (
           <img
             src={project.image.startsWith('http') ? project.image : `${BASE}projects/${project.image}`}
             alt={project.name}
             className="h-32 w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
           />
-        </div>
-      )}
+        ) : (
+          <div className="h-32 w-full flex items-center justify-center bg-gradient-to-r from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-700 text-slate-500">
+            <div className="text-center">
+              <div className="text-sm font-semibold">{project.name || project.title}</div>
+              <div className="text-xs mt-1">{project.subtitle || project.summary || ''}</div>
+            </div>
+          </div>
+        )}
+      </div>
 
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-2">
