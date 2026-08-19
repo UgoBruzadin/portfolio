@@ -6,7 +6,7 @@
 export const experience = [
     {
         id: 'neuroleap-advisor',
-        title: 'Data Science Advisor',
+        title: 'Neuroscience Advisor',
         org: 'NeuroLeap Corp.',
         company: 'NeuroLeap Corp.',
         location: 'Costa Mesa, CA (remote)',
@@ -15,9 +15,9 @@ export const experience = [
         display: 'Jul 2026 – Present',
         period: 'Jul 2026 – Present',
         bullets: [
-            'Advising on data strategy, model evaluation, and reproducible ML pipelines (role: part-time, advisory).'
+            'Advising on neural data processing and neurodiagnostic protocols of various neurodevelopmental conditions in childhood (role: part-time, advisory).'
         ],
-        roles: ['data-science', 'ml-research']
+        roles: ['neuroscience', 'ml-research']
     },
 
     {
@@ -38,7 +38,7 @@ export const experience = [
 
     {
         id: 'maryville-adjunct',
-        title: 'Adjunct Faculty (Statistics; Tests & Measurements)',
+        title: 'Adjunct Instructor (Statistics; Tests & Measurements)',
         org: 'Maryville University',
         company: 'Maryville University',
         location: 'St. Louis, MO',
@@ -64,7 +64,7 @@ export const experience = [
         bullets: [
             'Built end-to-end ML pipelines for multimodal EEG-image datasets; designed cross-modal alignment models.'
         ],
-        roles: ['ml-research', 'data-science', 'neuroscience']
+        roles: ['ml-research', 'data-science', 'neuroscience', 'bioinformatics']
     },
 
     {
@@ -94,7 +94,7 @@ export const experience = [
         display: 'Aug 2021 – May 2023',
         period: 'Aug 2021 – May 2023',
         bullets: ['Course instruction and curriculum development.'],
-        roles: ['data-science']
+        roles: ['data-science, neuroscience']
     },
 
     {

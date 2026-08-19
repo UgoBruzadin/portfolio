@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fetchRepos, fetchPortfolioJson, fetchRepoStats } from '../api/github'
-import { featuredProjects } from '../data/resume'
+import { featuredProjects } from '../data'
 
 export function useGithubProjects() {
   const [repos, setRepos] = useState([])

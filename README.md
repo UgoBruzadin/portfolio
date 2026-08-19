@@ -25,6 +25,3 @@ Data scientist and computational neuroscientist based in St. Louis, MO. 10+ year
 - Alljoined-1.6M — arXiv preprint (2025); arXiv:2508.18571
 - Two, Not One — ASSC 2025 (poster)
 - Visual Awareness Positivity — VSS 2025 (talk)
-
-Live site and the README now derive from a single data layer in `src/data/` (see `src/data/index.js`). For missing/ambiguous facts I have left UNVERIFIED notes in AUDIT.md; please confirm the preferred display name and any missing links (NeuroLeap, Maryville profile links) so I can add them to the data layer.
-

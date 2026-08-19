@@ -6,6 +6,7 @@
 export const projects = [
     {
         id: 'enigma',
+        repo: 'ENIGMA',
         title: 'ENIGMA: EEG-to-Image in 15 Minutes',
         subtitle: 'Unified lightweight EEG-to-image model',
         blurb: 'Cross-modal alignment between EEG embeddings and visual latent spaces enabling multi-subject image reconstruction.',
@@ -22,6 +23,7 @@ export const projects = [
 
     {
         id: 'alljoined-1.6m',
+        repo: 'Alljoined-1.6M',
         title: 'Alljoined-1.6M',
         subtitle: 'A million-trial EEG–image dataset for affordable BCI research',
         blurb: 'Large-scale visual-stimulus EEG dataset enabling robust cross-subject decoding benchmarks.',
@@ -38,6 +40,7 @@ export const projects = [
 
     {
         id: 'triangulation',
+        repo: 'Triangulation_Project',
         title: 'Triangulation Project',
         subtitle: 'Framework for consciousness decoding',
         blurb: 'Temporal generalization and parallelized moving-window cross-validation for EEG analyses.',
@@ -50,6 +53,7 @@ export const projects = [
 
     {
         id: 'quicklab',
+        repo: 'QuickLab',
         title: 'QuickLab',
         subtitle: 'EEG preprocessing & visualization EEGLAB plugin',
         blurb: 'High-speed, auditable preprocessing for multi-session EEG data.',
@@ -62,6 +66,7 @@ export const projects = [
 
     {
         id: 'physreve',
+        repo: 'PhysREVE',
         title: 'PhysREVE',
         subtitle: 'Physics-informed EEG adapter',
         blurb: 'Injects leadfield-derived electrode similarity into a frozen EEG foundation model to improve cross-subject performance.',
