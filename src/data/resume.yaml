@@ -214,7 +214,7 @@ featuredProjects:
     why: A labmate co-authored the closest real dataset (Harari/DIAN), but that cohort sits behind a NIAGADS Data Use Agreement; SEA-AD (Allen Institute) is a fully open substitute in the same domain — human AD cortex, paired RNA+ATAC — letting the same analysis run end to end on public data.
     problem: Single-cell multiome data requires separately correcting and clustering two different modalities (RNA, ATAC) per nucleus, then fusing them into one joint representation, before any biological question about disease pathology can be asked.
     approach: Harmony-corrected RNA PCA + TF-IDF/LSI on ATAC, combined via Seurat's weighted-nearest-neighbor (WNN) graph for joint clustering; marker-gene cell-type calls validated against SEA-AD's own reference labels; per-cell-type differential accessibility (logistic-regression test, depth-corrected) between High and Low/Not-AD neuropathology donors.
-    results: 8 donors, ~39,900 paired nuclei, 90.5% marker-based annotation agreement with SEA-AD's reference labels. Over 1,000 significant differentially accessible peaks across 7 cell types comparing High vs Low/Not-AD pathology, consistently skewed toward increased accessibility in high-pathology donors (e.g. astrocytes: 416/23,984 peaks, 381 up vs 35 down).
+    results: "8 donors, ~39,900 paired nuclei, 90.5% marker-based annotation agreement with SEA-AD's reference labels. Over 1,000 significant differentially accessible peaks across 7 cell types comparing High vs Low/Not-AD pathology, consistently skewed toward increased accessibility in high-pathology donors (e.g. astrocytes: 416/23,984 peaks, 381 up vs 35 down)."
     stack: [R, Seurat, Signac, Harmony, R Markdown]
     github: https://github.com/UgoBruzadin/sea-ad-multiome-cortex
 
