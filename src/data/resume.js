@@ -1,3 +1,6 @@
-// Re-export everything from the YAML source of truth.
-// Edit src/data/resume.yaml to update portfolio content.
-export { profile, experience, education, teaching, awards, skills, publications, featuredProjects } from './resume.yaml'
+// Re-export everything from the new JS data layer (single source of truth)
+import data, { profile, experience, projects, publications, teaching, education, skills, awards, featuredProjects } from './index'
+
+export { profile, experience, projects, publications, teaching, education, skills, awards, featuredProjects }
+
+export default data

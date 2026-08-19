@@ -1,3 +1,5 @@
+// Archived scratch file from earlier development. Kept for reference.
+
 // =========================
 // PRODUCTION UPGRADE (UI + UX + DATA + FEATURES)
 // =========================
@@ -38,7 +40,7 @@ base: '/portfolio/', // <-- SET THIS TO YOUR REPO NAME }) //====================
   export default function Filters({ tags, active, setActive }) {
   return (
   <div className="flex gap-3 justify-center mb-6 flex-wrap">
-    {["All", ...tags].map(tag => (
+    {[["All", ...tags].map(tag => (
     <button key={tag} onClick={()=> setActive(tag)}
       className={`px-3 py-1 border rounded ${active === tag ? 'bg-black text-white dark:bg-white dark:text-black' :
       ''}`}

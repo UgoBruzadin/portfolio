@@ -36,14 +36,14 @@ export default function Hero() {
           {...fadeUp(0.1)}
           className="text-4xl sm:text-5xl font-bold tracking-tight"
         >
-          Ugo Bruzadin Nunes
+          {profile.name}
           <span className="text-neural-400">.</span>
         </motion.h1>
 
         <motion.div {...fadeUp(0.15)} className="flex justify-end">
           <img
             src={`${BASE}profile.jpg`}
-            alt="Ugo Bruzadin Nunes"
+            alt={profile.name}
             className="w-24 h-24 rounded-full object-cover border border-slate-200 dark:border-slate-700"
           />
         </motion.div>

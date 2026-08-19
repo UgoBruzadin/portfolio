@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-slate-200 dark:border-slate-800 mt-16 py-8">
       <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <span className="font-mono text-xs text-slate-400 dark:text-slate-500">
-          © {new Date().getFullYear()} Ugo Bruzadin Nunes
+          © {new Date().getFullYear()} {profile.name}
         </span>
         <div className="flex items-center gap-4">
           <a

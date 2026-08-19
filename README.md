@@ -1,80 +1,30 @@
 # Ugo Bruzadin Nunes, PhD
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Site-blue?style=for-the-badge&logo=react)](https://ugobruzadin.github.io/portfolio/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ugonunes)
-[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:ugobruzadin@gmail.com)
+[Live portfolio](https://ugobruzadin.github.io/portfolio/) • ugobruzadin@gmail.com • https://github.com/UgoBruzadin • https://linkedin.com/in/ugonunes
 
-## Neural Data Scientist & Brain–Computer Interface Researcher
+Data scientist and computational neuroscientist based in St. Louis, MO. 10+ years building reproducible multimodal pipelines and ML for neural data.
 
-> San Francisco, CA • 10+ years in computational neuroscience and machine learning for neural signal decoding
+## Current roles
+- Data Science Advisor, NeuroLeap Corp. (Costa Mesa, CA — remote) — Jul 2026 – Present
+- Postdoctoral Fellow & Visiting Scholar, Brain Institute, Chapman University — Sep 2023 – Present
+- Adjunct Faculty (Statistics), Maryville University, St. Louis — Aug 2026 – Present
 
-I'm a computational neuroscientist specializing in brain–computer interfaces, with expertise in EEG decoding, multimodal data pipelines, and machine learning for neural data. Currently at **Alljoined**, developing next-generation BCI technologies for visual reconstruction and consciousness decoding.
+## Featured projects
+- ENIGMA — EEG-to-image model (TMLR, in press 2026; arXiv:2602.10361)
+- Alljoined-1.6M — 1.6M-trial EEG–image dataset (arXiv:2508.18571)
+- PhysREVE — physics-informed EEG adapter (cross-subject improvements)
+- Triangulation Project — temporal-generalization CV framework for EEG analyses
 
-### Featured Research & Projects
+## Education
+- Ph.D., Psychology (Cognitive Neuroscience), Southern Illinois University, Carbondale — 2023
+- M.A., Psychology (Cognitive Neuroscience), Southern Illinois University, Carbondale — 2018
+- B.A., Psychology, Pontifícia Universidade Católica de São Paulo — 2012
 
-#### **ENIGMA** - Unified EEG-to-Image Model
-*Unified lightweight EEG-to-image model for multi-subject visual decoding. Submitted to CVPR 2026.*
-- Cross-modal alignment between EEG embeddings and visual latent spaces (CLIP)
-- Outperforms prior per-subject models; generalized across subjects
-- [GitHub](https://github.com/UgoBruzadin/ENIGMA) • [Blog Post](https://www.alljoined.com/blog/introducing-enigma)
+## Selected publications
+- ENIGMA — Transactions on Machine Learning Research (in press, 2026); arXiv:2602.10361
+- Alljoined-1.6M — arXiv preprint (2025); arXiv:2508.18571
+- Two, Not One — ASSC 2025 (poster)
+- Visual Awareness Positivity — VSS 2025 (talk)
 
-#### **Alljoined-1.6M** - Large-Scale EEG Dataset
-*1.6 million visual stimulus trials for affordable BCI research. Published on OpenArxiv 2025.*
-- Systematic data collection across many participants with standardized preprocessing
-- Enabling new SOTA benchmarks in EEG decoding
-- [GitHub](https://github.com/UgoBruzadin/Alljoined-1.6M) • [Blog Post](https://www.alljoined.com/blog/introducing-alljoined-1-6m)
+Live site and the README now derive from a single data layer in `src/data/` (see `src/data/index.js`). For missing/ambiguous facts I have left UNVERIFIED notes in AUDIT.md; please confirm the preferred display name and any missing links (NeuroLeap, Maryville profile links) so I can add them to the data layer.
 
-#### **Triangulation Project** - Consciousness Decoding
-*Machine learning framework for decoding neural correlates of consciousness from EEG/ERP data.*
-- Temporal generalization with parallelized moving-window cross-validation
-- 134% speedup in analysis; novel signatures identified (VAP, inattentional blindness correlates)
-- [GitHub](https://github.com/UgoBruzadin/Triangulation_Project)
-
-#### **QuickLab** - EEG Preprocessing Tool
-*Open-source EEGLAB plugin for high-speed EEG preprocessing and visualization.*
-- Parallelized MATLAB processing with streamlined GUI
-- ~500% improvement in processing speed
-- [GitHub](https://github.com/UgoBruzadin/QuickLab)
-
-### Professional Experience
-
-**Neural Data Scientist** @ Alljoined (2025–Present)
-- Designed end-to-end ML pipelines for multimodal datasets (EEG, behavioral data, eye-tracking)
-- Developed preprocessing workflows improving model accuracy by 12%
-- Scaled experiments across GPU clusters using SLURM
-
-**Postdoctoral Fellow** @ Chapman University (2023–2025)
-- Developed computational models decoding conscious perception using EEG and ML
-- Created 3D CNN outperforming linear models by 12.5%
-- Managed multi-lab EEG projects (>5 TB data, 200+ participants)
-
-### Technical Skills
-
-**Programming & Tools:** Python, PyTorch, TensorFlow, Scikit-Learn, MATLAB, SQL, JavaScript, R, C/C++
-
-**Neural Data & BCI:** EEG/MEG Decoding, Lab Streaming Layer (LSL), Feature Extraction, Neural Signal Processing, Time–Frequency Analysis
-
-**Machine Learning:** CNN, Transformer, RNN, Tree-Based Models, Time-Series Forecasting, Self-Supervised Learning
-
-**Infrastructure:** Docker, AWS, SLURM, Git, Experiment Versioning
-
-### Education
-
-- **Ph.D. Cognitive Neuroscience** - Southern Illinois University (2023)
-- **M.A. Cognitive Neuroscience** - Southern Illinois University (2018)
-- **B.A. Psychology** - Pontíficia Universidade Católica de São Paulo (2012)
-
-### Recent Publications
-
-- *"ENIGMA: A Unified Lightweight EEG-to-Image Model for Multi-Subject Visual Decoding"* - CVPR 2026 Submission
-- *"Alljoined-1.6M: A Million-Trial EEG-Image Dataset for Evaluating Affordable BCIs"* - OpenArxiv 2025
-- *"Two, Not One: Electrophysiological Correlates of Consciousness in a No-Report Paradigm"* - ASSC 2025 Poster
-- *"Visual Awareness Positivity: A Novel Neural Correlate of Consciousness"* - VSS 2025 Talk
-
----
-
-⭐ **Check out my [live portfolio](https://ugobruzadin.github.io/portfolio/)** for detailed project showcases, interactive demos, and more!
-
----
-
-*This repository contains the source code for my personal portfolio website. Built with React, Vite, and Tailwind CSS.*
