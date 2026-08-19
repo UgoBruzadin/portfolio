@@ -1,0 +1,36 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#07111F"/>
+  <rect x="80" y="90" width="1040" height="520" rx="28" fill="url(#bg)"/>
+  <g opacity="0.9">
+    <circle cx="260" cy="390" r="110" fill="#22D3EE" fill-opacity="0.14"/>
+    <circle cx="580" cy="355" r="150" fill="#38BDF8" fill-opacity="0.12"/>
+    <circle cx="890" cy="400" r="120" fill="#A78BFA" fill-opacity="0.12"/>
+  </g>
+  <g>
+    <path d="M160 485C250 420 300 350 360 330C450 300 520 380 610 345C700 310 770 230 850 245C920 258 980 310 1030 280" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round"/>
+    <path d="M160 510C270 490 340 430 420 405C520 374 590 430 680 392C770 354 860 288 1020 300" stroke="#67E8F9" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+    <path d="M215 180V470" stroke="#94A3B8" stroke-width="3" stroke-dasharray="10 14"/>
+    <path d="M515 160V495" stroke="#94A3B8" stroke-width="3" stroke-dasharray="10 14"/>
+    <path d="M820 170V495" stroke="#94A3B8" stroke-width="3" stroke-dasharray="10 14"/>
+  </g>
+  <g>
+    <rect x="170" y="145" width="300" height="130" rx="18" fill="#0F172A" fill-opacity="0.75" stroke="#67E8F9" stroke-opacity="0.7"/>
+    <text x="195" y="198" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">SEA-AD</text>
+    <text x="195" y="238" fill="#A5F3FC" font-family="Arial, Helvetica, sans-serif" font-size="24">Single-cell tutorial</text>
+  </g>
+  <g>
+    <g fill="#F8FAFC">
+      <circle cx="240" cy="330" r="8"/>
+      <circle cx="450" cy="290" r="8"/>
+      <circle cx="720" cy="250" r="8"/>
+      <circle cx="965" cy="315" r="8"/>
+    </g>
+    <path d="M240 330L450 290L720 250L965 315" stroke="#F8FAFC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="80" y1="90" x2="1120" y2="610" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1120"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+</svg>

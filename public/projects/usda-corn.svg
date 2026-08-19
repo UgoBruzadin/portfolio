@@ -1,0 +1,36 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#0B1220"/>
+  <rect x="60" y="80" width="1080" height="540" rx="32" fill="url(#bg)"/>
+  <g opacity="0.9">
+    <path d="M120 530C220 470 280 420 360 400C480 370 540 410 650 350C710 320 780 260 860 240C920 225 980 250 1060 210V560H120V530Z" fill="#2DD4BF" fill-opacity="0.18"/>
+    <path d="M120 560C240 520 300 460 390 430C470 404 540 450 650 390C710 360 800 300 900 260C980 228 1035 238 1060 220V600H120V560Z" fill="#38BDF8" fill-opacity="0.12"/>
+  </g>
+  <g opacity="0.95">
+    <path d="M170 420L260 340L350 420" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M260 340V510" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round"/>
+    <path d="M350 420L440 350L540 430" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M440 350V510" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round"/>
+    <path d="M540 430L650 330L760 430" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M650 330V510" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round"/>
+    <path d="M760 430L860 300L960 420" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M860 300V510" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="180" y="150" width="250" height="120" rx="20" fill="#0F172A" fill-opacity="0.8" stroke="#67E8F9" stroke-opacity="0.6"/>
+    <text x="205" y="195" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">US Corn</text>
+    <text x="205" y="236" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="24">Yield + Geospatial</text>
+  </g>
+  <g>
+    <circle cx="260" cy="370" r="16" fill="#FACC15"/>
+    <circle cx="440" cy="400" r="16" fill="#FACC15"/>
+    <circle cx="650" cy="370" r="16" fill="#FACC15"/>
+    <circle cx="860" cy="330" r="16" fill="#FACC15"/>
+    <path d="M260 370L440 400L650 370L860 330" stroke="#FACC15" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="60" y1="80" x2="1140" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+</svg>

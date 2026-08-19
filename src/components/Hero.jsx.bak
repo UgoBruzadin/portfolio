@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="space-y-6">
         <motion.div {...fadeUp(0)}>
           <span className="font-mono text-sm text-neural-500 dark:text-neural-400 tracking-widest uppercase">
-            Data Scientist • Applied ML • Research
+            Neural Data Scientist
           </span>
         </motion.div>
 
@@ -63,8 +63,8 @@ export default function Hero() {
           {[
             { value: '10+', label: 'Years of research' },
             { value: '1.6M+', label: 'EEG trials collected' },
-            { value: '+14.8%', label: 'Cross-subject ML gain' },
-            { value: '5+ TB', label: 'Data managed' },
+            { value: '+14.8%', label: 'Cross-subject accuracy' },
+            { value: '5+ TB', label: 'Neural data managed' },
           ].map(({ value, label }) => (
             <div
               key={label}

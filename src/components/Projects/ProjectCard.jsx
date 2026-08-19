@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 
+const BASE = import.meta.env.BASE_URL
+
 export default function ProjectCard({ project, onClick, index }) {
   return (
     <motion.div
@@ -10,6 +12,16 @@ export default function ProjectCard({ project, onClick, index }) {
       onClick={onClick}
       className="card cursor-pointer hover:border-neural-400/60 dark:hover:border-neural-400/40 hover:shadow-lg hover:shadow-neural-400/5 transition-all duration-200 group"
     >
+      {project.image && (
+        <div className="mb-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800">
+          <img
+            src={project.image.startsWith('http') ? project.image : `${BASE}projects/${project.image}`}
+            alt={project.name}
+            className="h-32 w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+          />
+        </div>
+      )}
+
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-2">
           <svg className="w-4 h-4 text-slate-400 group-hover:text-neural-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
