@@ -33,7 +33,7 @@ Data scientist and computational neuroscientist with 10+ years of experience bui
 
 ## Selected publications
 
-- ENIGMA: A Unified Lightweight EEG-to-Image Model for Multi-Subject Visual Decoding — Transactions on Machine Learning Research (TMLR) — in press (2026); https://arxiv.org/abs/2602.10361
+- ENIGMA: EEG-to-Image in 15 Minutes Using Less Than 1% of the Parameters — Transactions on Machine Learning Research (TMLR) — in press (2026); https://arxiv.org/abs/2602.10361
 - Alljoined-1.6M: A Million-Trial EEG-Image Dataset for Evaluating Affordable BCIs — arXiv preprint (2025); https://arxiv.org/abs/2508.18571
 - Two, Not One: Electrophysiological Correlates of Consciousness in a No-Report Paradigm — ASSC 2025 — poster (2025)
 - Visual Awareness Positivity: A Novel Neural Correlate of Consciousness — Vision Sciences Society (VSS) 2025 — talk (2025)

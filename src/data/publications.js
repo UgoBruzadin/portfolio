@@ -6,11 +6,11 @@
 export const publications = [
     {
         id: 'enigma-paper',
-        title: 'ENIGMA: A Unified Lightweight EEG-to-Image Model for Multi-Subject Visual Decoding',
+        title: 'ENIGMA: EEG-to-Image in 15 Minutes Using Less Than 1% of the Parameters',
         venue: 'Transactions on Machine Learning Research (TMLR) — in press',
         year: 2026,
         link: 'https://arxiv.org/abs/2602.10361',
-        authorPosition: '3rd of 7 authors',
+        authorPosition: '3rd of 6 authors',
         role: 'My role: preprocessing and cross-subject alignment pipeline; ablation studies and model evaluation.',
         roles: ['ml-research', 'neuroscience']
     },

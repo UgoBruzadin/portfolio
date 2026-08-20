@@ -14,8 +14,13 @@ export const experience = [
         current: true,
         display: 'Jul 2026 – Present',
         period: 'Jul 2026 – Present',
-        summary: 'Part-time advisory role on neural data processing and neurodiagnostic protocols for neurodevelopmental conditions in childhood.',
-        bullets: [],
+        summary: 'Part-time advisory role directing BCI paradigm design, EEG signal-processing R&D, and technical strategy for neural decoding applications.',
+        bullets: [
+            'Advise executive leadership on brain–computer interface (BCI) paradigm design, data collection protocols, and hardware selection for neural decoding applications.',
+            'Direct the technical development of real-time EEG signal processing pipelines, artifact rejection algorithms, and machine learning models for neural time-series data.',
+            'Evaluate emerging neuro-AI architectures and cross-modal machine learning frameworks to establish technical R&D milestones and product feasibility.',
+            'Author technical documentation, experimental specifications, and research reports to guide engineering team execution and support investor/business development collateral.'
+        ],
         roles: ['neuroscience', 'ml-research']
     },
 
