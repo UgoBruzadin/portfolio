@@ -13,8 +13,8 @@ Data scientist and computational neuroscientist with 10+ years of experience bui
 ## Featured projects
 
 - Storm Outage Risk — County-level power-outage risk model for the 216 counties of Missouri and Illinois: a DuckDB + dbt warehouse of public outage, weather and place data, a tracked model benchmark, and an interactive dashboard. ([link](https://github.com/UgoBruzadin/storm-outage-risk))
-- US Corn Yield Geospatial — County-level US corn yield (2005-2024) from USDA NASS joined to Census boundaries via GeoPandas, cleaned into a Tableau-Public-ready dataset. ([link](https://github.com/UgoBruzadin/usda-crop-yield-geospatial))
-- SEA-AD Single-Cell Tutorial (Python) — A hands-on scanpy teaching series on the same SEA-AD Alzheimer's cortex multiome data — QC, integration, clustering, annotation, and differential expression, each notebook paired with homework and worked solutions. ([link](https://github.com/UgoBruzadin/sea-ad-python-scanpy))
+- Drought, Irrigation & US Corn Yield — How much does summer drought cut US corn yield, and how much does irrigation protect against it? 29,120 county-years of USDA, NOAA and Census data joined and tested in PostgreSQL/PostGIS, with a regression analysis and an interactive Streamlit app. ([link](https://github.com/UgoBruzadin/usda-crop-yield-geospatial))
+- SEA-AD Single-Cell Tutorial (Python) — A hands-on scanpy teaching series on the Allen Institute's SEA-AD Alzheimer's cortex multiome data — QC, integration, clustering, annotation, and differential expression, each notebook paired with homework and worked solutions. ([link](https://github.com/UgoBruzadin/sea-ad-python-scanpy))
 - CLIP Semantic Axis Geometry — Probes CLIP ViT-L/14's representational geometry along category, perceptual, and spatial semantic axes — revealing strongly anisotropic alignment (category encoded ~6× more discriminatively than spatial) with direct consequences for EEG-to-image decoding. ([link](https://github.com/UgoBruzadin/clip-semantic-axis-geometry))
 - PhysREVE — Physics-informed adapter that injects leadfield-derived electrode similarity into a frozen EEG foundation model, achieving +14.8% cross-subject improvement with a single learnable scalar. ([link](https://github.com/UgoBruzadin/PhysREVE))
 - Syn2Emo — Benchmarks multimodal LLMs as synthetic emotion annotators, achieving r = 0.814 correlation with human ratings — enabling scalable affective labeling without costly lab studies. ([link](https://github.com/UgoBruzadin/Syn2Emo))
@@ -24,7 +24,6 @@ Data scientist and computational neuroscientist with 10+ years of experience bui
 - Novel Neural Correlates of Consciousness — Novel neural signatures of inattentional blindness identified using cluster analysis of ERP data and time-frequency. ([link](https://github.com/UgoBruzadin/IB-ERP-cluster-analysis))
 - Triangulation Project — Machine learning framework for decoding neural correlates of consciousness from EEG/ERP data. ([link](https://github.com/UgoBruzadin/Triangulation_Project))
 - QuickLab — Open-source EEGLAB plugin for high-speed EEG preprocessing and visualization. ([link](https://github.com/UgoBruzadin/QuickLab))
-- SEA-AD MTG Multiome — Paired snRNA+snATAC (10x Multiome) analysis of human cortex across the Alzheimer's pathology spectrum — QC through WNN clustering, marker-based annotation, and differential chromatin accessibility, in Seurat/Signac. ([link](https://github.com/UgoBruzadin/sea-ad-multiome-cortex))
 
 ## Education
 

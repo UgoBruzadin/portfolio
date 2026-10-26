@@ -22,16 +22,16 @@ export const projects = [
     },
 
     {
-        name: 'US Corn Yield Geospatial',
+        name: "Drought, Irrigation & US Corn Yield",
         repo: 'usda-crop-yield-geospatial',
-        image: 'usda-corn.svg',
-        summary: 'County-level US corn yield (2005-2024) from USDA NASS joined to Census boundaries via GeoPandas, cleaned into a Tableau-Public-ready dataset.',
-        tags: ['GeoPandas', 'Geospatial', 'USDA NASS', 'Census TIGER', 'Tableau', 'Python', 'EDA'],
-        why: 'A quick, self-contained geospatial data engineering project to demonstrate pulling, cleaning, and spatially joining real government data end to end, and shipping it as a dataset ready for a BI tool rather than stopping at a notebook.',
-        problem: "USDA crop yield statistics and Census county boundaries live in separate systems with no shared key exposed to end users; turning them into a single clean, join-ready file for mapping/BI requires reconciling FIPS codes, handling NASS's undisclosed-county rows, and keeping file size sane for tools like Tableau Public.",
-        approach: "Streamed USDA NASS's keyless bulk crops flat file and filtered on the fly to county-level corn grain yield without storing the full file; joined to Census cartographic county boundaries on FIPS; split output into a lightweight boundaries GeoJSON plus a full county-year CSV panel to keep the Tableau handoff practical.",
-        results: '31,441 county-year rows across 2,248 counties and 41 states, 0 unmatched FIPS. County-average yield rose ~+2.25 bu/acre/year (+25% over 20 years); the 2012 Midwest drought is clearly visible (-9.8% YoY, then +30.6% rebound); irrigated western counties average 200+ bu/acre vs 50-65 in dryland Great Plains counties.',
-        stack: ['Python', 'GeoPandas', 'Pandas', 'Shapely', 'Matplotlib', 'Tableau Public'],
+        image: 'corn-drought-irrigation.png',
+        summary: "How much does summer drought cut US corn yield, and how much does irrigation protect against it? 29,120 county-years of USDA, NOAA and Census data joined and tested in PostgreSQL/PostGIS, with a regression analysis and an interactive Streamlit app.",
+        tags: ["SQL", "PostgreSQL", "PostGIS", "DuckDB", "Geospatial", "Regression", "Streamlit", "Python"],
+        why: "Drought is the largest source of year-to-year loss in US corn, and irrigation is the main defence against it. Quantifying how much irrigation protects, and where, needs yield, weather and irrigation data that live in different agencies with different keys.",
+        problem: "USDA yield and irrigation statistics, NOAA county climate and Census boundaries use different codes, grains and formats (long-format survey tables with suppressed cells, fixed-width climate records keyed by alphabetical state codes, shapefiles). Naive county averages also misstate national yield by 7-16%.",
+        approach: "A layered PostgreSQL/PostGIS warehouse (raw, staging, core with keys and constraints, analysis, exports) built from public files in under 10 seconds, with SQL tests that check the pipeline against independent totals (production, official national yield, national irrigated acres). Yield anomalies against each county's own trend, then two designs: drought x irrigation across counties, and irrigated vs non-irrigated fields within the same county and year. DuckDB copies the export views to Parquet for a Streamlit app with a clickable county map.",
+        results: "In severe drought, rainfed counties lose 22% of trend yield and mostly irrigated counties 5%; within the same county, dryland fields lose 53% and irrigated fields 4%. Irrigation removes nearly all of the drought loss (4.7% per PDSI unit for rainfed corn) but only half of the heat loss, and only once more than ~30% of a county's corn is irrigated.",
+        stack: ["PostgreSQL", "PostGIS", "SQL", "DuckDB", "Docker", "Python", "pandas", "GeoPandas", "statsmodels", "Streamlit", "Plotly"],
         github: 'https://github.com/UgoBruzadin/usda-crop-yield-geospatial',
         featured: true
     },
@@ -40,7 +40,7 @@ export const projects = [
         name: 'SEA-AD Single-Cell Tutorial (Python)',
         repo: 'sea-ad-python-scanpy',
         image: 'sea-ad-tutorial.svg',
-        summary: "A hands-on scanpy teaching series on the same SEA-AD Alzheimer's cortex multiome data — QC, integration, clustering, annotation, and differential expression, each notebook paired with homework and worked solutions.",
+        summary: "A hands-on scanpy teaching series on the Allen Institute's SEA-AD Alzheimer's cortex multiome data — QC, integration, clustering, annotation, and differential expression, each notebook paired with homework and worked solutions.",
         tags: ['scanpy', 'Python', 'Single-Cell', 'AnnData', "Alzheimer's Disease", 'Tutorial'],
         why: "Built to actually learn single-cell analysis hands-on in Jupyter Notebooks — each notebook teaches a concept, demonstrates it on real data, then leaves homework to work through.",
         problem: "Single-cell genomics has a real learning curve (AnnData structure, QC conventions, batch correction, marker-based annotation, differential expression) that's hard to absorb from a finished pipeline alone.",
@@ -197,20 +197,6 @@ export const projects = [
         github: 'https://github.com/UgoBruzadin/QuickLab',
         featured: true,
         highlight: true
-    },
-
-    {
-        name: 'SEA-AD MTG Multiome',
-        repo: 'sea-ad-multiome-cortex',
-        summary: "Paired snRNA+snATAC (10x Multiome) analysis of human cortex across the Alzheimer's pathology spectrum — QC through WNN clustering, marker-based annotation, and differential chromatin accessibility, in Seurat/Signac.",
-        tags: ['snRNA-seq', 'snATAC-seq', 'Multiome', 'Seurat', 'Signac', "Alzheimer's Disease", 'R'],
-        why: "A labmate co-authored the closest real dataset (Harari/DIAN), but that cohort sits behind a NIAGADS Data Use Agreement; SEA-AD (Allen Institute) is a fully open substitute in the same domain — human AD cortex, paired RNA+ATAC — letting the same analysis run end to end on public data.",
-        problem: 'Single-cell multiome data requires separately correcting and clustering two different modalities (RNA, ATAC) per nucleus, then fusing them into one joint representation, before any biological question about disease pathology can be asked.',
-        approach: "Harmony-corrected RNA PCA + TF-IDF/LSI on ATAC, combined via Seurat's weighted-nearest-neighbor (WNN) graph for joint clustering; marker-gene cell-type calls validated against SEA-AD's own reference labels; per-cell-type differential accessibility (logistic-regression test, depth-corrected) between High and Low/Not-AD neuropathology donors.",
-        results: "8 donors, ~39,900 paired nuclei, 90.5% marker-based annotation agreement with SEA-AD's reference labels. Over 1,000 significant differentially accessible peaks across 7 cell types comparing High vs Low/Not-AD pathology, consistently skewed toward increased accessibility in high-pathology donors (e.g. astrocytes: 416/23,984 peaks, 381 up vs 35 down).",
-        stack: ['R', 'Seurat', 'Signac', 'Harmony', 'R Markdown'],
-        github: 'https://github.com/UgoBruzadin/sea-ad-multiome-cortex',
-        featured: true
     }
 ]
 
