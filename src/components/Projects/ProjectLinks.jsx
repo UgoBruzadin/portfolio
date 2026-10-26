@@ -22,6 +22,12 @@ const HFIcon = () => (
   </svg>
 )
 
+const GlobeIcon = () => (
+  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0zM3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18" />
+  </svg>
+)
+
 const LockIcon = () => (
   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -46,6 +52,7 @@ function getLinks(project) {
   }
   if (project.paper) links.push({ href: project.paper, label: 'Paper', Icon: PaperIcon })
   if (project.huggingface) links.push({ href: project.huggingface, label: 'HuggingFace', Icon: HFIcon })
+  if (project.demo) links.push({ href: project.demo, label: 'Project page', Icon: GlobeIcon })
   return links
 }
 

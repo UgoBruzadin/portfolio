@@ -12,6 +12,7 @@ Data scientist and computational neuroscientist with 10+ years of experience bui
 
 ## Featured projects
 
+- Storm Outage Risk — County-level power-outage risk model for the 216 counties of Missouri and Illinois: a DuckDB + dbt warehouse of public outage, weather and place data, a tracked model benchmark, and an interactive dashboard. ([link](https://github.com/UgoBruzadin/storm-outage-risk))
 - US Corn Yield Geospatial — County-level US corn yield (2005-2024) from USDA NASS joined to Census boundaries via GeoPandas, cleaned into a Tableau-Public-ready dataset. ([link](https://github.com/UgoBruzadin/usda-crop-yield-geospatial))
 - SEA-AD Single-Cell Tutorial (Python) — A hands-on scanpy teaching series on the same SEA-AD Alzheimer's cortex multiome data — QC, integration, clustering, annotation, and differential expression, each notebook paired with homework and worked solutions. ([link](https://github.com/UgoBruzadin/sea-ad-python-scanpy))
 - CLIP Semantic Axis Geometry — Probes CLIP ViT-L/14's representational geometry along category, perceptual, and spatial semantic axes — revealing strongly anisotropic alignment (category encoded ~6× more discriminatively than spatial) with direct consequences for EEG-to-image decoding. ([link](https://github.com/UgoBruzadin/clip-semantic-axis-geometry))

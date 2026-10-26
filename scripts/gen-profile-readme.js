@@ -40,6 +40,7 @@ function buildReadme() {
         if (p.github) refs.push(`[GitHub](${p.github})`)
         if (p.paper) refs.push(`[Paper](${p.paper})`)
         if (p.blog) refs.push(`[Blog Post](${p.blog})`)
+        if (p.demo) refs.push(`[Project Page](${p.demo})`)
         if (refs.length) lines.push(refs.join(' • '))
         lines.push('')
     }

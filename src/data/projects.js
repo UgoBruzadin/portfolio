@@ -1,9 +1,26 @@
 /**
- * @typedef {{name:string,repo:string,image?:string,summary:string,tags:string[],why?:string,problem?:string,approach?:string,results?:string,stack?:string[],role?:string,github?:string,paper?:string,blog?:string,huggingface?:string,link?:string,private?:boolean,featured:boolean,highlight?:boolean}} Project
+ * @typedef {{name:string,repo:string,image?:string,summary:string,tags:string[],why?:string,problem?:string,approach?:string,results?:string,stack?:string[],role?:string,github?:string,paper?:string,blog?:string,huggingface?:string,demo?:string,link?:string,private?:boolean,featured:boolean,highlight?:boolean}} Project
  */
 
 /** @type {Project[]} */
 export const projects = [
+    {
+        name: 'Storm Outage Risk',
+        repo: 'storm-outage-risk',
+        image: 'storm-outage-risk.jpg',
+        summary: 'County-level power-outage risk model for the 216 counties of Missouri and Illinois: a DuckDB + dbt warehouse of public outage, weather and place data, a tracked model benchmark, and an interactive dashboard.',
+        tags: ['dbt', 'DuckDB', 'SQL', 'XGBoost', 'Geospatial', 'MLflow', 'Python'],
+        why: 'The same storm knocks out power in some counties and not others. Separating what the weather does from what the place does is the question utilities and emergency planners care about.',
+        problem: 'Outages are rare (about 0.5% of county-blocks start a ≥ 5% outage) and persistent, so a model can look accurate by predicting "still out". The useful and hard target is the onset of a new outage.',
+        approach: 'dbt pipeline on DuckDB joining DOE EAGLE-I outage records, NOAA HRRR storm ingredients and storm reports, USFS tree canopy and Census housing into 6-hour county blocks. Scored new outages separately from ongoing ones, validated on the next year and on unseen counties, and compared model families and feature groups in an MLflow-tracked benchmark.',
+        results: 'Onset PR-AUC for ≥ 5% outages: 0.087 on the next year vs a 0.008 climatology baseline; 0.111 on unseen counties. On new outages the model is a weather model (wind, shear × instability, wind × rain); scored on all blocks, persistence dominates. Tree canopy looked important in one model family but its effect was weak and inconsistent across models.',
+        stack: ['Python', 'SQL', 'dbt', 'DuckDB', 'XGBoost', 'LightGBM', 'scikit-learn', 'MLflow', 'GeoPandas', 'Streamlit', 'Docker'],
+        github: 'https://github.com/UgoBruzadin/storm-outage-risk',
+        demo: 'https://ugobruzadin.github.io/storm-outage-risk/',
+        featured: true,
+        highlight: true
+    },
+
     {
         name: 'US Corn Yield Geospatial',
         repo: 'usda-crop-yield-geospatial',
